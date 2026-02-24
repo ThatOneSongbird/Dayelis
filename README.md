@@ -4,7 +4,7 @@ This is the bot maintained by me for personal use in my TTRPG group with my clos
 ## Current functions:  
 !pf2e to pull up Archives of Nethys link for Pathfinder 2E  
 !sf2e to pull up Archievs of Netyhs link for Starfinder 2E  
-!foundry to pull up ThatOneSongbird's Foundry  
+!foundry to pull up a Foundry link, set by environment variable 
 !hello to get a random greeting.  
 !announcement to send an embedded announcement. Dayelis will prompt the user for the information, and reiterate a loop for every new field (up to 25)
 !reloadcog <cog name> to reload a cog for new functionality
