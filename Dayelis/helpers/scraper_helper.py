@@ -7,6 +7,8 @@ class ScraperHelper:
     def __init__(self):
         self.base_url = "https://2e.aonprd.com/"
 
+    # Function takes query, combines it with the base url, and encodes it for spaces. Then it makes a request to the search url and parses the HTML using BeautifulSoup. 
+    # It looks for links that match the category and query, and returns the full URL if found. If not found, it returns an error message.
     async def search_pathfinder(self, query: str, category: str):
         encoded_query = urllib.parse.quote(query) # encodes spaces
         search_url = f"{self.base_url}search?q={encoded_query}"
