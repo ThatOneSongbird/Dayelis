@@ -25,9 +25,116 @@ class ScraperHelper:
         
         for link in links:
             href = link['href']
-            text = link.get_text
+            text = link.get_text()
             if f"{category}.aspx" in href and text.lower() == query.lower():
                 return f"{self.base_url}{href}"
-        return (f"Sorry, I couldn't find a {category} named '{query}'. Please check the spelling and try again.")        
+            else:
+                return None
     
+    # NOTE: FOLLOWING FUNCTIONS ARE PLACEHOLDER AND NOT FINAL. THESE ARE BASIC SHAPES AND WILL ALL BE ADJUSTED. 
+    # Character Related ie Class, Ancestry, Feats, Archetypes        
+    async def build_ancestry_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        ancestry_embed = discord.Embed(
+            title = ancestryName,
+            description = ancestryDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return ancestry_embed
+     
+    async def build_class_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        class_embed = discord.Embed(
+            title = className,
+            description = classDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return class_embed
     
+    async def build_archetype_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        archetype_embed = discord.Embed(
+            title = archetypeName,
+            description = archetypeDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return archetype_embed
+    
+    async def build_feat_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        feat_embed = discord.Embed(
+            title = featName,
+            description = featDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return feat_embed
+    
+    # Creature, Spell, Items
+    async def build_creature_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        creature_embed = discord.Embed(
+            title = creatureName,
+            description = creatureDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return creature_embed
+    
+    async def build_spell_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        spell_embed = discord.Embed(
+            title = spellName,
+            description = spellDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return spell_embed
+    
+    async def build_item_embed(self, url: str):
+        
+        html = await self.fetch_page(url)
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        #Extract data from site, organize data and assign to different values
+        
+        item_embed = discord.Embed(
+            title = itemName,
+            description = itemDescription,
+            color = discord.Color.Red(),
+        )
+        
+        return item_embed

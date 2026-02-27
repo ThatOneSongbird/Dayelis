@@ -6,23 +6,24 @@ import asyncio
 class Scraping(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.scraper = ScraperHelper()
+        self.scraper = scraper_helper()
 
     # Character Related ie Class, Ancestry, Feats, Archetypes
     @commands.command()
     async def ancestry(self, ctx, *, ancestry_name: str):
         try:
-            ancestry_embed = await self.scraper.build_ancestry_embed(ancestry_name)
+            url = self.scraper.search_pathfinder(ancestry_name, "Ancestry")
+            ancestry_embed = await self.scraper.build_ancestry_embed(url)
         except Exception:
             await ctx.send("I couldn't find that ancestry. Please check the spelling and try again.")
             return
-
         await ctx.send(embed=ancestry_embed)
         
     @commands.command()
     async def cclass(self, ctx, *, class_name: str): # needed to be cclass becuase class is a reserved word in python lol
         try:
-            class_embed = await self.scraper.build_class_embed(class_name)
+            url = self.scraper.search_pathfinder(class_name, "Class")
+            class_embed = await self.scraper.build_class_embed(url)
         except Exception:
             await ctx.send("I couldn't find that class. Please check the spelling and try again.")
             return
@@ -32,7 +33,8 @@ class Scraping(commands.Cog):
     @commands.command()
     async def archetype(self, ctx, *, archetype_name: str):
         try:
-            archetype_embed = await self.scraper.build_archetype_embed(archetype_name)
+            url = self.scraper.search_pathfinder(archetype_name, "Archetype")
+            archetype_embed = await self.scraper.build_archetype_embed(url)
         except Exception:
             await ctx.send("I couldn't find that archetype. Please check the spelling and try again.")
             return
@@ -42,7 +44,8 @@ class Scraping(commands.Cog):
     @commands.command()
     async def feats(self, ctx, *, feat_name: str):
         try:
-            feat_embed = await self.scraper.build_feat_embed(feat_name)
+            url = self.scraper.search_pathfinder(feat_name, "Feat")
+            feat_embed = await self.scraper.build_feat_embed(url)
         except Exception:
             await ctx.send("I couldn't find that feat. Please check the spelling and try again.")
             return
@@ -53,7 +56,8 @@ class Scraping(commands.Cog):
     @commands.command()
     async def creature(self, ctx, *, creature_name: str):
         try:
-            creature_embed = await self.scraper.build_creature_embed(creature_name)
+            url = self.scraper.search_pathfinder(creature_name, "Creature")
+            creature_embed = await self.scraper.build_creature_embed(url)
         except Exception:
             await ctx.send("I couldn't find that creature. Please check the spelling and try again.")
             return
@@ -63,7 +67,8 @@ class Scraping(commands.Cog):
     @commands.command()
     async def spell(self, ctx, *, spell_name: str):
         try:
-            spell_embed = await self.scraper.build_spell_embed(spell_name)
+            url = self.scraper.search_pathfinder(spell_name, "Spell")
+            spell_embed = await self.scraper.build_spell_embed(url)
         except Exception:
             await ctx.send("I couldn't find that spell. Please check the spelling and try again.")
             return
@@ -73,7 +78,8 @@ class Scraping(commands.Cog):
     @commands.command()
     async def item(self, ctx, *, item_name: str):
         try:
-            item_embed = await self.scraper.build_item_embed(item_name)
+            url = self.scraper.search_pathfinder(item_name, "Item")
+            item_embed = await self.scraper.build_item_embed(url)
         except Exception:
             await ctx.send("I couldn't find that item. Please check the spelling and try again.")
             return
