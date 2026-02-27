@@ -1,6 +1,6 @@
 import discord
 import aiohttp
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, NavigableString, Tag
 import urllib.parse
 
 class ScraperHelper:
@@ -39,12 +39,40 @@ class ScraperHelper:
         soup = BeautifulSoup(html, 'html.parser')
         
         #Extract data from site, organize data and assign to different values
+        ancestryName = soup.find("div", id="main-wrapper").find("div", id="main").find("h1", class_="title").find("a").get_text(strip=True)
+        
+        main_div = soup.select_one("div#main.main")
+        spans = main_div.find_all("span")
+        target_span = spans[2]
+        full_text = ""
+        for child in target_span.children:
+            if isinstance(child, NavigableString):
+                text = child.strip()
+                if text:
+                    full_text += text + " "
+            elif isinstance(child, Tag):
+                if child.name == "i":
+                    full_text += child.get_text(strip=True) + " "
+                elif child.name == "br":
+                    continue
+                else:
+                    full_text += child.get_text(strip=True) + " "
+        ancestryDescription = full_text
+        
+        
         
         ancestry_embed = discord.Embed(
             title = ancestryName,
             description = ancestryDescription,
             color = discord.Color.Red(),
         )
+        
+        ancestry_embed.add_field(name="Hit Points", value = hpValue, inline= True)
+        ancestry_embed.add_field(name="Size", value = sizeValue, inline= True)
+        ancestry_embed.add_field(name="Speed", value = speedValue, inline= True)
+        ancestry_embed.add_field(name="Ability Boosts", value = abilityBoostsValue, inline= False)
+        ancestry_embed.add_field(name="Ability Flaw(s)", value = abilityFlawsValue, inline= True)
+        ancestry_embed.add_field(name="Languages", value = languagesKnown, inline= False)
         
         return ancestry_embed
      
