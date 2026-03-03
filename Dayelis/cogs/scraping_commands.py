@@ -2,11 +2,12 @@ import discord
 import random
 from discord.ext import commands
 import asyncio
+from Dayelis.helpers.scraper_helper import ScraperHelper
 
 class Scraping(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.scraper = scraper_helper()
+        self.scraper = ScraperHelper()
 
     # Character Related ie Class, Ancestry, Feats, Archetypes
     @commands.command()
