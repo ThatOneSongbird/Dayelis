@@ -38,7 +38,7 @@ class ScraperHelper:
         html = await self.fetch_page(url)
         soup = BeautifulSoup(html, 'html.parser')
         
-        #Extract data from site, organize data and assign to different values
+        # extracts ancestry name and description from the site and puts them into their values
         ancestryName = soup.find("div", id="main-wrapper").find("div", id="main").find("h1", class_="title").find("a").get_text(strip=True)
         
         main_div = soup.select_one("div#main.main")
@@ -59,20 +59,82 @@ class ScraperHelper:
                     full_text += child.get_text(strip=True) + " "
         ancestryDescription = full_text
         
+        # fields ot be able to properly extract data while skipping the sections we don't want
+        STOP_SECTIONS = {
+            "You Might...",
+            "Physical Description",
+            "Society",
+            "Beliefs",
+            "Others Probably...",
+            "Society",
+            "Names",
+            "Adventurers",
+            "Other Information",
+        }
         
+        VALID_FIELDS = {
+            "Hit Points",
+            "Size",
+            "Speed",
+            "Attribute Boosts",
+            "Attribute Flaw",
+            "Languages",
+        }
         
+        INLINE_MAP = {
+            "Hit Points": True,
+            "Size": True,
+            "Speed": True,
+            "Attribute Boosts": False,
+            "Attribute Flaw": True,
+            "Languages": False,
+        }
+        parsed_sections = {}
+        
+        # section for extracting class mechanical data since they are all h2, and skips over lore sections
+        for header in main_div.find_all("h2", class_="title"):
+            title = header.get_text(strip=True)
+            if title in STOP_SECTIONS:
+                continue
+            # extract value until next h2
+            value = ""
+            node = header.next_sibling
+            while node and not (isinstance(node, Tag) and node.name == "h2"):
+                if isinstance(node, NavigableString):
+                    text = node.strip()
+                    if text:
+                        value += text + " "
+                elif isinstance(node, Tag) and node.name != "br":
+                    value += node.get_text(strip=True) + " "
+                node = node.next_sibling
+            
+            parsed_sections[title] = value.strip()
+        
+        # attempts to find thumbnail image, if it exists, and adds it to the embed. If not, it continues without adding an image.    
+        image_tag = soup.select_one("div#main.main img.thumbnail")
+        image_url = None
+        if image_tag:
+            image_url = image_tag.get("src")
+            if image_url and not image_url.startswith("/"):
+                image_url = self.base_url + image_url
+        if image_url:
+            ancestry_embed.set_thumbnail(url=image_url)
+            
+        
+        # builds the embed using the extracted data, and adds fields for each section that is in the VALID_FIELDS set. The inline property of each field is determined by the INLINE_MAP dictionary. Finally, it returns the completed embed.
         ancestry_embed = discord.Embed(
             title = ancestryName,
             description = ancestryDescription,
             color = discord.Color.Red(),
         )
         
-        ancestry_embed.add_field(name="Hit Points", value = hpValue, inline= True)
-        ancestry_embed.add_field(name="Size", value = sizeValue, inline= True)
-        ancestry_embed.add_field(name="Speed", value = speedValue, inline= True)
-        ancestry_embed.add_field(name="Ability Boosts", value = abilityBoostsValue, inline= False)
-        ancestry_embed.add_field(name="Ability Flaw(s)", value = abilityFlawsValue, inline= True)
-        ancestry_embed.add_field(name="Languages", value = languagesKnown, inline= False)
+        for name, value in parsed_sections.items():
+            if name in VALID_FIELDS:
+                ancestry_embed.add_field(
+                    name=name, 
+                    value=value,
+                    inline=INLINE_MAP.get(name, False)
+                )
         
         return ancestry_embed
      
