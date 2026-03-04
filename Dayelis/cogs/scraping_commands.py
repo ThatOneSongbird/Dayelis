@@ -13,7 +13,7 @@ class Scraping(commands.Cog):
     @commands.command()
     async def ancestry(self, ctx, *, ancestry_name: str):
         try:
-            url = self.scraper.search_pathfinder(ancestry_name, "Ancestry")
+            url = await self.scraper.search_pathfinder(ancestry_name, "Ancestry")
             ancestry_embed = await self.scraper.build_ancestry_embed(url)
         except Exception:
             await ctx.send("I couldn't find that ancestry. Please check the spelling and try again.")
