@@ -15,10 +15,11 @@ class Scraping(commands.Cog):
         try:
             url = await self.scraper.search_pathfinder(ancestry_name, "Ancestry")
             ancestry_embed = await self.scraper.build_ancestry_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that ancestry. Please check the spelling and try again.")
-            return
-        await ctx.send(embed=ancestry_embed)
+            await ctx.send(embed=ancestry_embed)
+        except Exception as e:
+            await ctx.send("Search issue:" , e)
+            raise
+        
         
     @commands.command()
     async def cclass(self, ctx, *, class_name: str): # needed to be cclass becuase class is a reserved word in python lol
