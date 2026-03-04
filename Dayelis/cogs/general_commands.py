@@ -66,7 +66,7 @@ class General(commands.Cog):
 
     @commands.command()
     async def foundry(self, ctx):
-        await ctx.send(f"Foundry link: {self.bot.FOUNDRY_LINK} \n Have fun~.")
+        await ctx.send(f"Foundry link: {self.bot.FOUNDRY_LINK}\nHave fun~")
 
     @commands.command()
     async def sf2e(self, ctx):
