@@ -81,6 +81,7 @@ async def on_command_error(ctx, error):
 async def main():
     async with bot:
         await bot.load_extension("cogs.general_commands")
+        await bot.load_extension("cogs.scraping_commands")
         
         # Loads token/url from environment variable.
         TOKEN = os.getenv("DISCORD_TOKEN")
