@@ -2,7 +2,7 @@ import discord
 import random
 from discord.ext import commands
 import asyncio
-from Dayelis.helpers.scraper_helper import ScraperHelper
+from helpers.scraper_helper import ScraperHelper
 
 class Scraping(commands.Cog):
     def __init__(self, bot):
