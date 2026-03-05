@@ -20,7 +20,7 @@ class Scraping(commands.Cog):
                 await ctx.send("Search returned nothing.")
                 return
             
-            ancestry_embed = await self.scraper.build_ancestry_embed(url)
+            ancestry_embed = await self.scraper.build_ancestry_embed(url, ancestry_name)
             await ctx.send(embed=ancestry_embed)
         except Exception as e:
             print("FULL ERROR:", e)
