@@ -68,7 +68,7 @@ class ScraperHelper:
         # ancestry name
         ancestryName = name
         
-        #missing ancestry description
+        # missing ancestry description
         
         # fields to be able to properly extract data while skipping the sections we don't want
         STOP_SECTIONS = {
