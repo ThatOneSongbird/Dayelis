@@ -2,6 +2,7 @@ import discord
 import aiohttp
 from bs4 import BeautifulSoup, NavigableString, Tag
 import urllib.parse
+from urllib.parse import urljoin
 
 class ScraperHelper:
     def __init__(self):
@@ -12,6 +13,7 @@ class ScraperHelper:
     async def search_pathfinder(self, query: str, category: str):
         encoded_query = urllib.parse.quote(query) # encodes spaces
         search_url = f"{self.base_url}search?q={encoded_query}"
+        print(f"{self.base_url}search?q={encoded_query}")
         
         async with aiohttp.ClientSession() as session:
             async with session.get(search_url) as response:
@@ -25,11 +27,13 @@ class ScraperHelper:
         
         for link in links:
             href = link['href']
-            text = link.get_text()
-            if f"{category}.aspx" in href and text.lower() == query.lower():
-                return f"{self.base_url}{href}"
-            else:
-                return None
+            text = link.get_text(strip=True)
+            print(f"Debug Link: {href} | {text}")
+            if f"{category}.aspx" in href.lower() and query.lower() in text.lower():
+                final_url = urljoin(self.base_url, href)
+                print(f"DEBUG MATCH: {final_url}")
+                return final_url
+        return None
     
     # NOTE: FOLLOWING FUNCTIONS ARE PLACEHOLDER AND NOT FINAL. THESE ARE BASIC SHAPES AND WILL ALL BE ADJUSTED. 
     # Character Related ie Class, Ancestry, Feats, Archetypes        
