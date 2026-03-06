@@ -3,7 +3,7 @@ import asyncio
 import aiohttp
 from bs4 import BeautifulSoup, NavigableString, Tag
 import urllib.parse
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse, parse_qs
 
 class ScraperHelper:
     def __init__(self):
@@ -24,46 +24,41 @@ class ScraperHelper:
                 if response.status != 200:
                     raise Exception(f"Failed to fetch page. Status code: {response.status}")
                 return await response.text()
-
-    # Function takes query, combines it with the base url, and encodes it for spaces. Then it makes a request to the search url and parses the HTML using BeautifulSoup. 
-    # It looks for links that match the category and query, and returns the full URL if found. If not found, it returns an error message.
-    async def search_pathfinder(self, query: str, category: str):
-        category_url = self.CATEGORY_URLS.get(category.lower())
-        if not category_url:
-            raise ValueError(f"Unknown category: {category}")
-        print(f"{category_url}")
-        
-        await asyncio.sleep(2)
-        
-        async with aiohttp.ClientSession() as session:
-            async with session.get(category_url) as response:
-                if response.status != 200:
-                    raise Exception(f"Failed to fetch search results. Status code: {response.status}")
-                html = await response.text()
-        
+    #
+    # NOTE: ID matching for creatures may conflict where same-named creatures
+    # exist across multiple sources. To be handled in future update.        
+    async def fetch_id(self, name:str, category:str):
+        # function to match category to CATEGORY_URLS
+        html = await self.fetch_page(self.CATEGORY_URLS.get(category.lower()))
         soup = BeautifulSoup(html, 'html.parser')
-        links = soup.select("a[href]")
         
+        links = soup.select("a[href]")
         for link in links:
-            href = link['href']
+            href = link.get("href", "")
             text = link.get_text(strip=True)
             
-            print(f"Debug Link: {href} | {text}")
-            
-            if query.lower() in text.lower():
-                final_url = urljoin(category_url, href)
-                print(f"DEBUG MATCH: {final_url}")
-                return final_url
-        return None
-    
+            if name.lower() in text.lower() and "ID=" in href:
+                parsed = parse_qs(urlparse(href).query)
+                id = parsed["ID"][0]
+                url = urljoin("https://2e.aonprd.com/", href)
+                return id, url
+        return None, None
+        
     # NOTE: FOLLOWING FUNCTIONS ARE PLACEHOLDER AND NOT FINAL. THESE ARE BASIC SHAPES AND WILL ALL BE ADJUSTED. 
     # Character Related ie Class, Ancestry, Feats, Archetypes        
-    async def build_ancestry_embed(self, url: str, name: str):
-        
-        html = await self.fetch_page(url)
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        main_div = soup.select_one("div#main.main")
+    async def build_ancestry_embed(self, name: str):
+        entry = next((e for e in self.ancestries if e["name"].lower() == name.lower()), None)
+
+        if not entry:
+            raise ValueError(f"Could not find {name} in ancestries data.")
+
+        if "id" in entry and entry["id"]:
+            # construct URL directly
+            url = f"https://2e.aonprd.com/Ancestries.aspx?ID={entry['id']}"
+        else:
+            # call fetch_id to scrape and store it
+            id = await self.fetch_id(name, "ancestries")
+            url = f"https://2e.aonprd.com/Ancestries.aspx?ID={id}"
         
         # ancestry name
         ancestryName = name

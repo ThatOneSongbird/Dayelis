@@ -13,19 +13,11 @@ class Scraping(commands.Cog):
     @commands.command()
     async def ancestry(self, ctx, *, ancestry_name: str):
         try:
-            url = await self.scraper.search_pathfinder(ancestry_name, "Ancestries")
-            print("URL RETURNED:", url)
-            
-            if not url:
-                await ctx.send("Search returned nothing.")
-                return
-            
             ancestry_embed = await self.scraper.build_ancestry_embed(url, ancestry_name)
             await ctx.send(embed=ancestry_embed)
         except Exception as e:
             print("FULL ERROR:", e)
             await ctx.send(f"Search issue: {e}")
-            raise
         
         
     @commands.command()
