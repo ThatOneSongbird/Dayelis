@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import aiohttp
+import json
 from bs4 import BeautifulSoup, NavigableString, Tag
 import urllib.parse
 from urllib.parse import urljoin, urlparse, parse_qs
@@ -16,6 +17,15 @@ class ScraperHelper:
         "feats": "https://2e.aonprd.com/Feats.aspx",
         "spells": "https://2e.aonprd.com/Feats.aspx"
         }
+        #functions to load jsons on initalization
+        with open("helpers/data/ancestry-table.json") as f:
+            self.ancestries = json.load(f)
+        with open("helpers/data/archetype-table.json") as f:
+            self.archetypes = json.load(f)
+        with open("helpers/data/background-table.json") as f:
+            self.backgrounds = json.load(f)
+        with open("helpers/data/class-table.json") as f:
+            self.classes = json.load(f)
         
     async def fetch_page(self, url: str) -> str:
         #fetch html content of a url asynchronously
@@ -24,11 +34,11 @@ class ScraperHelper:
                 if response.status != 200:
                     raise Exception(f"Failed to fetch page. Status code: {response.status}")
                 return await response.text()
-    #
+            
     # NOTE: ID matching for creatures may conflict where same-named creatures
     # exist across multiple sources. To be handled in future update.        
     async def fetch_id(self, name:str, category:str):
-        # function to match category to CATEGORY_URLS
+        # function to match category to CATEGORY_URLS, and then find the url/id, and write it back to the json
         html = await self.fetch_page(self.CATEGORY_URLS.get(category.lower()))
         soup = BeautifulSoup(html, 'html.parser')
         
@@ -56,90 +66,32 @@ class ScraperHelper:
             # construct URL directly
             url = f"https://2e.aonprd.com/Ancestries.aspx?ID={entry['id']}"
         else:
-            # call fetch_id to scrape and store it
-            id = await self.fetch_id(name, "ancestries")
-            url = f"https://2e.aonprd.com/Ancestries.aspx?ID={id}"
+            # call the fetch_id
+            id, url = await self.fetch_id(name, "ancestries")
+            entry["id"] = id
+            entry["url"] = url
+            with open("helpers/data/ancestry-table.json", "w") as f:
+                json.dump(self.ancestries, f, indent=4)
         
-        # ancestry name
-        ancestryName = name
+        ancestryName = entry["name"]
+        ancestryDescription = entry["summary"]
         
-        # missing ancestry description
-        
-        # fields to be able to properly extract data while skipping the sections we don't want
-        STOP_SECTIONS = {
-            "You Might...",
-            "Physical Description",
-            "Society",
-            "Beliefs",
-            "Others Probably...",
-            "Society",
-            "Names",
-            "Adventurers",
-            "Other Information",
-        }
-        
-        VALID_FIELDS = {
-            "Hit Points",
-            "Size",
-            "Speed",
-            "Attribute Boosts",
-            "Attribute Flaw",
-            "Languages",
-        }
-        
-        INLINE_MAP = {
-            "Hit Points": True,
-            "Size": True,
-            "Speed": True,
-            "Attribute Boosts": False,
-            "Attribute Flaw": True,
-            "Languages": False,
-        }
-        parsed_sections = {}
-        
-        # section for extracting class mechanical data since they are all h2, and skips over lore sections
-        for header in main_div.find_all("h2", class_="title"):
-            title = header.get_text(strip=True)
-            if title in STOP_SECTIONS:
-                continue
-            # extract value until next h2
-            value = ""
-            node = header.next_sibling
-            while node and not (isinstance(node, Tag) and node.name == "h2"):
-                if isinstance(node, NavigableString):
-                    text = node.strip()
-                    if text:
-                        value += text + " "
-                elif isinstance(node, Tag) and node.name != "br":
-                    value += node.get_text(strip=True) + " "
-                node = node.next_sibling
-            
-            parsed_sections[title] = value.strip()
-        
-        # builds the embed using the extracted data, and adds fields for each section that is in the VALID_FIELDS set. The inline property of each field is determined by the INLINE_MAP dictionary. Finally, it returns the completed embed.
+    
+        # builds the embed using the extracted data from the json, matching key names to key values
         ancestry_embed = discord.Embed(
             title = ancestryName,
+            url = url,
             description = ancestryDescription,
             color = discord.Color.red(),
         )        
         
-        # attempts to find thumbnail image, if it exists, and adds it to the embed. If not, it continues without adding an image.    
-        image_tag = soup.select_one("div#main.main img.thumbnail")
-        image_url = None
-        if image_tag:
-            src = image_tag.get("src")
-            if src:
-                image_url = urljoin("https://2e.aonprd.com/", src)
-        if image_url:
-            ancestry_embed.set_thumbnail(url=image_url)
-        
-        for name, value in parsed_sections.items():
-            if name in VALID_FIELDS:
-                ancestry_embed.add_field(
-                    name=name, 
-                    value=value,
-                    inline=INLINE_MAP.get(name, False)
-                )
+        ancestry_embed.add_field(name="Hit Points", value=entry["hp"], inline=True)
+        ancestry_embed.add_field(name="Size", value=entry["size"], inline=True)
+        ancestry_embed.add_field(name="Speed", value=entry["speed"], inline=True)
+        ancestry_embed.add_field(name="Attribute Boosts", value=entry["ability_boost"], inline=False)
+        ancestry_embed.add_field(name="Attribute Flaw", value=entry["ability_flaw"] or "None", inline=True)
+        ancestry_embed.add_field(name="Languages", value=entry["language"], inline=False)
+        ancestry_embed.add_field(name="Vision", value=entry["vision"] or "Normal", inline=True)
         
         return ancestry_embed
      
