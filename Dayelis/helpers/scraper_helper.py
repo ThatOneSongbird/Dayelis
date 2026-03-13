@@ -161,18 +161,40 @@ class ScraperHelper:
 
         return class_embed
     
-    async def build_archetype_embed(self, url: str):
+    async def build_archetype_embed(self, name: str):
+        entry = next((e for e in self.archetypes if e["name"].lower() == name.lower()), None)
+
+        if not entry:
+            raise ValueError(f"Could not find {name} in archetype data.")
+
+        if "id" in entry and entry["id"] and "image_url" in entry:
+            # construct both urls directly
+            url = f"https://2e.aonprd.com/Archetypes.aspx?ID={entry['id']}"
+            image_url = entry["image_url"]
+        else:
+            # call the fetch_id
+            id, url, image_url = await self.fetch_id(name, "archetypes")
+            entry["id"] = id
+            entry["url"] = url
+            entry["image_url"] = image_url
+            with open("helpers/data/archetype-table.json", "w", encoding = "utf-8") as f:
+                json.dump(self.archetypes, f, indent=4)
         
-        html = await self.fetch_page(url)
-        soup = BeautifulSoup(html, 'html.parser')
+        archetypeName = entry["name"]
+        archetypeDescription = entry["summary"]
         
-        #Extract data from site, organize data and assign to different values
-        
+        # builds the embed using the extracted data from the json, matching key names to key values
         archetype_embed = discord.Embed(
             title = archetypeName,
+            url = url,
             description = archetypeDescription,
-            color = discord.Color.Red(),
+            color = discord.Color.red(),
         )
+        
+        archetype_embed.add_field(name="Prerequisite", value=entry["prerequisite"] or "None", inline=False)
+        
+        if image_url:
+            archetype_embed.set_thumbnail(url=image_url)        
         
         return archetype_embed
     

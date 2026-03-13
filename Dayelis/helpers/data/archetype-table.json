@@ -1,1 +1,1176 @@
-[{"name":"Acrobat","prerequisite":"Trained in Acrobatics","summary":"You have trained your body to perform incredible, seemingly superhuman feats of grace and agility. You move in ways that leave your opponents …"},{"name":"Alchemist","prerequisite":"Intelligence +2","summary":"You enjoy tinkering with alchemical formulas and substances in your spare time, and your studies have progressed beyond mere experimentation. You …"},{"name":"Animist","prerequisite":"Wisdom +2","summary":"You have established a relationship with a spiritual entity known as an apparition, unlocking the ability to use animistic magic."},{"name":"Apocalypse Rider","prerequisite":"","summary":"From the mightiest empire to the smallest star, everything dies. Lowly mortals, ageless  angels , and primordial gods all face the same inescapable …"},{"name":"Archaeologist","prerequisite":"Trained in Society; Trained in Thievery","summary":"Adventurers raid tombs for material gain, but true archaeologists treasure the knowledge attained from such sites. You might accomplish your goals …"},{"name":"Archer","prerequisite":"","summary":"Bows of all types are powerful weapons. Generals and hunters alike recognize the power in dealing death from a distance, and from behind safe cover. …"},{"name":"Archfiend","prerequisite":"","summary":" Fiends  are legion. From the scheming, tyrannical  devils  and the sinful, soul-coveting  demons , to the terrifying sahkils and the unknowable  …"},{"name":"Artillerist","prerequisite":"trained in martial weapons","summary":"The artillerist's maxim holds that while fights might be won with swords, battles are won with cannons. Or in a pinch, with trebuchets, siege towers, …"},{"name":"Ascended Celestial","prerequisite":"","summary":"You have a noble and kind soul, as shown through your mortal deeds, and have thus earned the chance to join the ranks of celestial beings such as  …"},{"name":"Assassin","prerequisite":"Trained in Deception; Trained in Stealth","summary":"Targeted killing through stealth and subterfuge is the expertise of an assassin. While assassins are skilled in ending lives and many are evil, some …"},{"name":"Avenger","prerequisite":"Avenger","summary":"Most people are aware of champions and clerics as the most obvious of a deity’s divinely empowered servants, and those familiar with   vindicators  …"},{"name":"Avenging Runelord","prerequisite":"","summary":"The absolute pursuit of personal power was almost universal among the runelords of ancient Thassilon. In their haste to stave off death, they created …"},{"name":"Barbarian","prerequisite":"Constitution +2; Strength +2","summary":"There's a rage deep inside you that sometimes breaks loose, granting you some of the might of a barbarian in addition to your other abilities."},{"name":"Bard","prerequisite":"Charisma +2","summary":"A muse has called you to dabble in occult lore, allowing you to cast a few spells. The deeper you delve, the more powerful your performances become."},{"name":"Bastion","prerequisite":"Shield Block","summary":"Some say that a good offense is the best defense, but you find such boasting smacks of overconfidence. In your experience, the best defense is a …"},{"name":"Battle Harbinger","prerequisite":"battle creed","summary":"Battle harbingers are elite, specially trained members of their faith, usually carrying out missions that require extra martial prowess. Built for …"},{"name":"Beast Lord","prerequisite":"","summary":"The tales of connections between man and creature are numerous across the lands, often carrying with them legends of the exploits of companions as …"},{"name":"Beastmaster","prerequisite":"Trained in Nature","summary":"You attract the loyalty of animals, and as your powers increase, you can command more of them, briefly inhabit their body to perceive what they …"},{"name":"Blessed One","prerequisite":"","summary":"Through luck or deed, heritage or heroics, you carry the blessing of a deity. This blessing manifests as the ability to heal wounds and remove …"},{"name":"Bloodrager","prerequisite":"Bloodrager","summary":"There is a visceral power in blood. It sustains life through its flow. Bloodragers exist throughout societies in different forms. Matanji  orcs  are  …"},{"name":"Bounty Hunter","prerequisite":"","summary":"Whether for coin, glory, or justice, you know how to track, defeat, and capture dangerous individuals. You're accustomed to perusing wanted posters, …"},{"name":"Broken Chain","prerequisite":"","summary":"Wherever tyrants abuse their power, rebels soon follow, fighting against their oppression in disorganized and sporadic outbursts, often easily …"},{"name":"Captivator","prerequisite":"Charisma 14; Trained in Deception or Trained in Diplomacy","summary":"Others find you inherently fascinating. You have a facility with words that draws others in, and you've always found it easy to sway others to your …"},{"name":"Cavalier","prerequisite":"Trained in Nature or Trained in Society","summary":"You are a skilled and dedicated warrior on the battlefield who specializes in fighting astride a powerful animal companion that serves as your mount. …"},{"name":"Celebrity","prerequisite":"","summary":"You're a special personality... and you know it. You're not merely comfortable in the spotlight, you crave it. While the traditional celebrity is a …"},{"name":"Champion","prerequisite":"Charisma +2; Strength +2","summary":"You've sworn a solemn oath to your deity, who has granted you champion powers to aid you in your cause."},{"name":"Clawdancer","prerequisite":"permanent unarmed claw or talon attack (such as one granted by your ancestry or a graft)","summary":"Nature provides many creatures weapons for hunting and defense, but few are as common and simple as the claw. Whether for climbing, catching, or …"},{"name":"Cleric","prerequisite":"Wisdom +2","summary":"You are an ordained priest of your deity and have even learned how to cast a few divine spells. Though your main training lies elsewhere, your …"},{"name":"Commander","prerequisite":"Intelligence +2","summary":"Your knack for battlefield strategy and command has been honed into a fine skill, and you can use your keen intellect to help lead your allies to …"},{"name":"Crossbow Infiltrator","prerequisite":"Trained in Stealth","summary":"Crossbow infiltrators are typically highly trained members of specialized units or organizations who favor stealthy tactics and quiet weapons. …"},{"name":"Dandy","prerequisite":"Trained in Diplomacy","summary":"You are a genteel master of style, culture, and decorum, aware of even the subtlest rules of etiquette."},{"name":"Druid","prerequisite":"Wisdom +2","summary":"You have entered a druidic circle and learned a few of the order’s secrets, granting you primal power."},{"name":"Dual-Weapon Warrior","prerequisite":"","summary":"You're able to effortlessly fight with multiple weapons simultaneously, weaving your weapons together into a storm of quick attacks. To you, …"},{"name":"Duelist","prerequisite":"trained in light armor and simple weapons","summary":"All across the world, students in fencing academies practice with their weapons to master one-on-one combat. The libraries of these schools contain …"},{"name":"Eldritch Archer","prerequisite":"expert in at least one weapon from the or bow or crossbow weapon group","summary":"While many archers see their craft as an art form as much as a means of battle, a small number of archers seek to perfect their skills through magic, …"},{"name":"Elementalist","prerequisite":"elemental magic","summary":"You revere the elements as the building blocks of creation and the source of all life. You believe that by balancing, mixing, and rearranging these …"},{"name":"Eternal Legend","prerequisite":"","summary":"Do you ever consider your death? That grand thing that reaches us all, the consequence of life. The shadow cast by light. Do you ever consider your …"},{"name":"Exorcist","prerequisite":"Trained in Occultism or Trained in Religion","summary":"You pacify restless  spirits ,  ghosts , and  haunts , capturing fragments of them and using their vengeful energies to fuel your own powers while …"},{"name":"Familiar Master","prerequisite":"","summary":"From the wise owl perched on the wizard's shoulder to the crafty gremlin that serves the witch for their own reasons, the ghastly homunculus in the …"},{"name":"Familiar Sage","prerequisite":"You have a familiar, and you're able to cast spells.","summary":"According to Tian Xia's scholars, spirits and apparitions are commonly believed to embody various aspects of life, objects, and concepts. These …"},{"name":"Field Propagandist","prerequisite":"Charisma +2; Trained in Deception; Trained in Diplomacy","summary":"Some might call you a journalist, while others might think of you as a town crier or deploy you as a herald. You know that you are so much more: the …"},{"name":"Fighter","prerequisite":"Strength +2; Dexterity +2","summary":"You have spent time learning the art of warfare, increasing your skill with martial arms and at wearing armor. With further training, you can become …"},{"name":"Flexible Spellcaster","prerequisite":"flexible spell preparation","summary":"You've learned how to cast spells flexibly, blending the best elements of spontaneous and prepared spellcasting at the cost of casting fewer spells …"},{"name":"Gelid Shard","prerequisite":"","summary":"The Varki wizard T'aak Chamin once traveled from the Lands of the Linnorm Kings northward, past the Winterwall Glacier and deep into the frozen …"},{"name":"Geomancer","prerequisite":"Trained in Nature; ability to cast spells from spell slots; at least one spell with the air, cold, earth, fire, plant, or water trait","summary":"You know how to draw power from the land around you, no matter the terrain, by attuning your magic to match its mystical properties.   You might be a …"},{"name":"Gladiator","prerequisite":"Impressive Performance","summary":"The roar of the crowd and thrill of competitive combat drive you to become the best—and the fame isn't bad either. You always do your best work under …"},{"name":"Godling","prerequisite":"","summary":"Golarion has seen more than one mortal experience apotheosis and ascend to the ranks of its many deities. Some of the most famous of such individuals …"},{"name":"Guardian","prerequisite":"Strength +2; Constitution +2","summary":"You’ve learned the advantages of wearing the sturdiest of armor and keeping your enemies’ attention focused on you instead of your allies. You can …"},{"name":"Guerrilla","prerequisite":"Trained in Stealth; Trained in Survival","summary":"Eschewing straightforward clashes of armies on the fields of war, you favor covert, hit-and-run techniques that make your environment your …"},{"name":"Herbalist","prerequisite":"Natural Medicine; Trained in Nature","summary":"The plants around you can provide more remedies than the finest hospital or temple, and you are skilled in their use. Nature always provides to those …"}]
+[
+    {
+        "name": "Acrobat",
+        "prerequisite": "Trained in Acrobatics",
+        "summary": "You have trained your body to perform incredible, seemingly superhuman feats of grace and agility. You move in ways that leave your opponents \u2026"
+    },
+    {
+        "name": "Alchemist",
+        "prerequisite": "Intelligence +2",
+        "summary": "You enjoy tinkering with alchemical formulas and substances in your spare time, and your studies have progressed beyond mere experimentation. You \u2026",
+        "id": "228",
+        "url": "https://2e.aonprd.com/Archetypes.aspx?ID=228",
+        "image_url": "https://2e.aonprd.com/Images/Archetypes/Archetype_Alchemist.webp"
+    },
+    {
+        "name": "Animist",
+        "prerequisite": "Wisdom +2",
+        "summary": "You have established a relationship with a spiritual entity known as an apparition, unlocking the ability to use animistic magic."
+    },
+    {
+        "name": "Apocalypse Rider",
+        "prerequisite": "",
+        "summary": "From the mightiest empire to the smallest star, everything dies. Lowly mortals, ageless  angels , and primordial gods all face the same inescapable \u2026"
+    },
+    {
+        "name": "Archaeologist",
+        "prerequisite": "Trained in Society; Trained in Thievery",
+        "summary": "Adventurers raid tombs for material gain, but true archaeologists treasure the knowledge attained from such sites. You might accomplish your goals \u2026"
+    },
+    {
+        "name": "Archer",
+        "prerequisite": "",
+        "summary": "Bows of all types are powerful weapons. Generals and hunters alike recognize the power in dealing death from a distance, and from behind safe cover. \u2026"
+    },
+    {
+        "name": "Archfiend",
+        "prerequisite": "",
+        "summary": " Fiends  are legion. From the scheming, tyrannical  devils  and the sinful, soul-coveting  demons , to the terrifying sahkils and the unknowable  \u2026"
+    },
+    {
+        "name": "Artillerist",
+        "prerequisite": "trained in martial weapons",
+        "summary": "The artillerist's maxim holds that while fights might be won with swords, battles are won with cannons. Or in a pinch, with trebuchets, siege towers, \u2026"
+    },
+    {
+        "name": "Ascended Celestial",
+        "prerequisite": "",
+        "summary": "You have a noble and kind soul, as shown through your mortal deeds, and have thus earned the chance to join the ranks of celestial beings such as  \u2026"
+    },
+    {
+        "name": "Assassin",
+        "prerequisite": "Trained in Deception; Trained in Stealth",
+        "summary": "Targeted killing through stealth and subterfuge is the expertise of an assassin. While assassins are skilled in ending lives and many are evil, some \u2026"
+    },
+    {
+        "name": "Avenger",
+        "prerequisite": "Avenger",
+        "summary": "Most people are aware of champions and clerics as the most obvious of a deity\u2019s divinely empowered servants, and those familiar with   vindicators  \u2026"
+    },
+    {
+        "name": "Avenging Runelord",
+        "prerequisite": "",
+        "summary": "The absolute pursuit of personal power was almost universal among the runelords of ancient Thassilon. In their haste to stave off death, they created \u2026"
+    },
+    {
+        "name": "Barbarian",
+        "prerequisite": "Constitution +2; Strength +2",
+        "summary": "There's a rage deep inside you that sometimes breaks loose, granting you some of the might of a barbarian in addition to your other abilities."
+    },
+    {
+        "name": "Bard",
+        "prerequisite": "Charisma +2",
+        "summary": "A muse has called you to dabble in occult lore, allowing you to cast a few spells. The deeper you delve, the more powerful your performances become."
+    },
+    {
+        "name": "Bastion",
+        "prerequisite": "Shield Block",
+        "summary": "Some say that a good offense is the best defense, but you find such boasting smacks of overconfidence. In your experience, the best defense is a \u2026"
+    },
+    {
+        "name": "Battle Harbinger",
+        "prerequisite": "battle creed",
+        "summary": "Battle harbingers are elite, specially trained members of their faith, usually carrying out missions that require extra martial prowess. Built for \u2026"
+    },
+    {
+        "name": "Beast Lord",
+        "prerequisite": "",
+        "summary": "The tales of connections between man and creature are numerous across the lands, often carrying with them legends of the exploits of companions as \u2026"
+    },
+    {
+        "name": "Beastmaster",
+        "prerequisite": "Trained in Nature",
+        "summary": "You attract the loyalty of animals, and as your powers increase, you can command more of them, briefly inhabit their body to perceive what they \u2026"
+    },
+    {
+        "name": "Blessed One",
+        "prerequisite": "",
+        "summary": "Through luck or deed, heritage or heroics, you carry the blessing of a deity. This blessing manifests as the ability to heal wounds and remove \u2026"
+    },
+    {
+        "name": "Bloodrager",
+        "prerequisite": "Bloodrager",
+        "summary": "There is a visceral power in blood. It sustains life through its flow. Bloodragers exist throughout societies in different forms. Matanji  orcs  are  \u2026"
+    },
+    {
+        "name": "Bounty Hunter",
+        "prerequisite": "",
+        "summary": "Whether for coin, glory, or justice, you know how to track, defeat, and capture dangerous individuals. You're accustomed to perusing wanted posters, \u2026"
+    },
+    {
+        "name": "Broken Chain",
+        "prerequisite": "",
+        "summary": "Wherever tyrants abuse their power, rebels soon follow, fighting against their oppression in disorganized and sporadic outbursts, often easily \u2026"
+    },
+    {
+        "name": "Captivator",
+        "prerequisite": "Charisma 14; Trained in Deception or Trained in Diplomacy",
+        "summary": "Others find you inherently fascinating. You have a facility with words that draws others in, and you've always found it easy to sway others to your \u2026"
+    },
+    {
+        "name": "Cavalier",
+        "prerequisite": "Trained in Nature or Trained in Society",
+        "summary": "You are a skilled and dedicated warrior on the battlefield who specializes in fighting astride a powerful animal companion that serves as your mount. \u2026"
+    },
+    {
+        "name": "Celebrity",
+        "prerequisite": "",
+        "summary": "You're a special personality... and you know it. You're not merely comfortable in the spotlight, you crave it. While the traditional celebrity is a \u2026"
+    },
+    {
+        "name": "Champion",
+        "prerequisite": "Charisma +2; Strength +2",
+        "summary": "You've sworn a solemn oath to your deity, who has granted you champion powers to aid you in your cause."
+    },
+    {
+        "name": "Clawdancer",
+        "prerequisite": "permanent unarmed claw or talon attack (such as one granted by your ancestry or a graft)",
+        "summary": "Nature provides many creatures weapons for hunting and defense, but few are as common and simple as the claw. Whether for climbing, catching, or \u2026"
+    },
+    {
+        "name": "Cleric",
+        "prerequisite": "Wisdom +2",
+        "summary": "You are an ordained priest of your deity and have even learned how to cast a few divine spells. Though your main training lies elsewhere, your \u2026"
+    },
+    {
+        "name": "Commander",
+        "prerequisite": "Intelligence +2",
+        "summary": "Your knack for battlefield strategy and command has been honed into a fine skill, and you can use your keen intellect to help lead your allies to \u2026"
+    },
+    {
+        "name": "Crossbow Infiltrator",
+        "prerequisite": "Trained in Stealth",
+        "summary": "Crossbow infiltrators are typically highly trained members of specialized units or organizations who favor stealthy tactics and quiet weapons. \u2026"
+    },
+    {
+        "name": "Dandy",
+        "prerequisite": "Trained in Diplomacy",
+        "summary": "You are a genteel master of style, culture, and decorum, aware of even the subtlest rules of etiquette."
+    },
+    {
+        "name": "Druid",
+        "prerequisite": "Wisdom +2",
+        "summary": "You have entered a druidic circle and learned a few of the order\u2019s secrets, granting you primal power."
+    },
+    {
+        "name": "Dual-Weapon Warrior",
+        "prerequisite": "",
+        "summary": "You're able to effortlessly fight with multiple weapons simultaneously, weaving your weapons together into a storm of quick attacks. To you, \u2026"
+    },
+    {
+        "name": "Duelist",
+        "prerequisite": "trained in light armor and simple weapons",
+        "summary": "All across the world, students in fencing academies practice with their weapons to master one-on-one combat. The libraries of these schools contain \u2026"
+    },
+    {
+        "name": "Eldritch Archer",
+        "prerequisite": "expert in at least one weapon from the or bow or crossbow weapon group",
+        "summary": "While many archers see their craft as an art form as much as a means of battle, a small number of archers seek to perfect their skills through magic, \u2026"
+    },
+    {
+        "name": "Elementalist",
+        "prerequisite": "elemental magic",
+        "summary": "You revere the elements as the building blocks of creation and the source of all life. You believe that by balancing, mixing, and rearranging these \u2026"
+    },
+    {
+        "name": "Eternal Legend",
+        "prerequisite": "",
+        "summary": "Do you ever consider your death? That grand thing that reaches us all, the consequence of life. The shadow cast by light. Do you ever consider your \u2026"
+    },
+    {
+        "name": "Exorcist",
+        "prerequisite": "Trained in Occultism or Trained in Religion",
+        "summary": "You pacify restless  spirits ,  ghosts , and  haunts , capturing fragments of them and using their vengeful energies to fuel your own powers while \u2026"
+    },
+    {
+        "name": "Familiar Master",
+        "prerequisite": "",
+        "summary": "From the wise owl perched on the wizard's shoulder to the crafty gremlin that serves the witch for their own reasons, the ghastly homunculus in the \u2026"
+    },
+    {
+        "name": "Familiar Sage",
+        "prerequisite": "You have a familiar, and you're able to cast spells.",
+        "summary": "According to Tian Xia's scholars, spirits and apparitions are commonly believed to embody various aspects of life, objects, and concepts. These \u2026"
+    },
+    {
+        "name": "Field Propagandist",
+        "prerequisite": "Charisma +2; Trained in Deception; Trained in Diplomacy",
+        "summary": "Some might call you a journalist, while others might think of you as a town crier or deploy you as a herald. You know that you are so much more: the \u2026"
+    },
+    {
+        "name": "Fighter",
+        "prerequisite": "Strength +2; Dexterity +2",
+        "summary": "You have spent time learning the art of warfare, increasing your skill with martial arms and at wearing armor. With further training, you can become \u2026"
+    },
+    {
+        "name": "Flexible Spellcaster",
+        "prerequisite": "flexible spell preparation",
+        "summary": "You've learned how to cast spells flexibly, blending the best elements of spontaneous and prepared spellcasting at the cost of casting fewer spells \u2026"
+    },
+    {
+        "name": "Gelid Shard",
+        "prerequisite": "",
+        "summary": "The Varki wizard T'aak Chamin once traveled from the Lands of the Linnorm Kings northward, past the Winterwall Glacier and deep into the frozen \u2026"
+    },
+    {
+        "name": "Geomancer",
+        "prerequisite": "Trained in Nature; ability to cast spells from spell slots; at least one spell with the air, cold, earth, fire, plant, or water trait",
+        "summary": "You know how to draw power from the land around you, no matter the terrain, by attuning your magic to match its mystical properties.   You might be a \u2026"
+    },
+    {
+        "name": "Gladiator",
+        "prerequisite": "Impressive Performance",
+        "summary": "The roar of the crowd and thrill of competitive combat drive you to become the best\u2014and the fame isn't bad either. You always do your best work under \u2026"
+    },
+    {
+        "name": "Godling",
+        "prerequisite": "",
+        "summary": "Golarion has seen more than one mortal experience apotheosis and ascend to the ranks of its many deities. Some of the most famous of such individuals \u2026"
+    },
+    {
+        "name": "Guardian",
+        "prerequisite": "Strength +2; Constitution +2",
+        "summary": "You\u2019ve learned the advantages of wearing the sturdiest of armor and keeping your enemies\u2019 attention focused on you instead of your allies. You can \u2026"
+    },
+    {
+        "name": "Guerrilla",
+        "prerequisite": "Trained in Stealth; Trained in Survival",
+        "summary": "Eschewing straightforward clashes of armies on the fields of war, you favor covert, hit-and-run techniques that make your environment your \u2026"
+    },
+    {
+        "name": "Herbalist",
+        "prerequisite": "Natural Medicine; Trained in Nature",
+        "summary": "The plants around you can provide more remedies than the finest hospital or temple, and you are skilled in their use. Nature always provides to those \u2026"
+    },
+    {
+        "name": "Heroic Scion",
+        "prerequisite": "",
+        "summary": "Regular people often quip about the eventful lives of legendary heroes with pithy witticisms such as \u201cno good deed goes unpunished\u201d or \u201cno rest for \u2026"
+    },
+    {
+        "name": "Horizon Walker",
+        "prerequisite": "Trained in Survival",
+        "summary": "Many long for the open road, but you prefer the trackless wild. You can find safe passage through the most inhospitable terrain in the world\u2014icecaps, \u2026"
+    },
+    {
+        "name": "Investigator",
+        "prerequisite": "Intelligence +2",
+        "summary": "You\u2019ve developed a keen eye for investigating mysteries."
+    },
+    {
+        "name": "Kineticist",
+        "prerequisite": "Constitution +2",
+        "summary": "You have, intentionally or accidentally, awoken a gateway to elemental power inside yourself and can now channel that power to devastating effect, \u2026"
+    },
+    {
+        "name": "Linguist",
+        "prerequisite": "You speak at least 3 languages",
+        "summary": "Whether you study to further your own ambitions or simply out of fascination with the intricacies of language, your way with words is unparalleled."
+    },
+    {
+        "name": "Loremaster",
+        "prerequisite": "trained in at least one skill to Decipher Writing",
+        "summary": "Knowledge is power, and you labor in pursuit of that power. No matter the situation, you can usually procure some tidbit of knowledge to inform your \u2026"
+    },
+    {
+        "name": "Magus",
+        "prerequisite": "Strength 14 or Dexterity 14; Intelligence 14",
+        "summary": "You've mixed physical combat with spellcasting."
+    },
+    {
+        "name": "Marshal",
+        "prerequisite": "Trained in Diplomacy or Trained in Intimidation; trained in martial weapons",
+        "summary": "Marshals are leaders, first and foremost. Marshals can come from any class or background, though they all share a willingness to sacrifice their own \u2026"
+    },
+    {
+        "name": "Martial Artist",
+        "prerequisite": "",
+        "summary": "You have trained in the martial arts, making your unarmed strikes lethal. You seek neither mysticism nor enlightenment, and you don't view this \u2026"
+    },
+    {
+        "name": "Mauler",
+        "prerequisite": "Strength +2",
+        "summary": "You shove your way through legions of foes, knock enemies on all sides to the ground, and deal massive blows to anyone or anything that comes near. \u2026"
+    },
+    {
+        "name": "Medic",
+        "prerequisite": "Battle Medicine; Trained in Medicine",
+        "summary": "You've studied countless techniques for providing medical aid, making you a peerless doctor and healer. While many healers happily practice the art \u2026"
+    },
+    {
+        "name": "Mind Smith",
+        "prerequisite": "",
+        "summary": "\u201cThe mind makes it real.\u201d Though uttered in many parts of Golarion, nowhere is this more literal than perhaps among mind smiths\u2014those with a \u2026"
+    },
+    {
+        "name": "Monk",
+        "prerequisite": "Dexterity +2; Strength +2",
+        "summary": "Monastic training has taught you martial arts and allowed you to hone your mind, body, and spirit."
+    },
+    {
+        "name": "Oracle",
+        "prerequisite": "Charisma +2",
+        "summary": "A mysterious force granted you divine magic and a curse."
+    },
+    {
+        "name": "Pirate",
+        "prerequisite": "Trained in Intimidation",
+        "summary": "You live a life of freedom, taking by force and intimidation all that you could possibly desire. You may be a privateer, raiding and plundering on \u2026"
+    },
+    {
+        "name": "Poisoner",
+        "prerequisite": "Trained in Crafting",
+        "summary": "People are so delightfully fragile when exposed to the insidious power of nature. The bite of a certain serpent makes the blood congeal to jelly. A \u2026"
+    },
+    {
+        "name": "Prophesied Monarch",
+        "prerequisite": "",
+        "summary": "Many lands and cultures have generational stories of an exceptional leader, a person who appeared in a time of great need to forge a kingdom and \u2026"
+    },
+    {
+        "name": "Psychic",
+        "prerequisite": "Intelligence +2 or Charisma +2",
+        "summary": "You\u2019ve awoken the latent abilities of your mind, taking your first steps into wielding psychic magic."
+    },
+    {
+        "name": "Ranger",
+        "prerequisite": "Dexterity +2",
+        "summary": "You have studied hunting, tracking, and wilderness survival, adding a ranger\u2019s tools to your skill set. Your keen eyes while hunting prey help gather \u2026"
+    },
+    {
+        "name": "Reanimator",
+        "prerequisite": "able to cast _animate dead_ with a spell slot",
+        "summary": "Most cultures revere the bodies of the deceased, laying to rest the mortal remains of their companions according to tradition formed generations \u2026"
+    },
+    {
+        "name": "Rogue",
+        "prerequisite": "Dexterity +2",
+        "summary": "You\u2019ve learned to sneak, steal, and disable traps. With time and luck, you\u2019ll become capable of moving through the shadows, striking unseen, and \u2026"
+    },
+    {
+        "name": "Scout",
+        "prerequisite": "Trained in Stealth; Trained in Survival",
+        "summary": "You're an expert in espionage and reconnaissance, able to skulk silently through the wilderness to gather intelligence, sneak through enemy lines and \u2026"
+    },
+    {
+        "name": "Scroll Trickster",
+        "prerequisite": "Trained in Nature, Trained in Arcana, Trained in Occultism, or Trained in Religion",
+        "summary": "Magic has been written down in myriad forms for a very long time. From the classic rolled parchment to strings tied with a hundred intricate knots, \u2026"
+    },
+    {
+        "name": "Sentinel",
+        "prerequisite": "",
+        "summary": "Armor offers solid, reassuring protection in combat, and as someone who faces danger on a regular basis, you have made it your business to get the \u2026"
+    },
+    {
+        "name": "Shadowdancer",
+        "prerequisite": "Master in Stealth; Expert in Performance",
+        "summary": "Shadow has always been the cousin of fear. Within the darkness, monsters dwell, plans are hatched, and enemies strike with fang and dagger and dark \u2026"
+    },
+    {
+        "name": "Snarecrafter",
+        "prerequisite": "Trained in Crafting",
+        "summary": "You\u0081're able to take ordinary materials and use them to create deadly snares\u2014special traps that you can rig up quickly when the situation demands. \u2026"
+    },
+    {
+        "name": "Sniping Duo",
+        "prerequisite": "trained in at least one type of weapon in the crossbow or firearm groups; Trained in Stealth",
+        "summary": "Skilled shooters who don't let their egos get in the way of their efficacy are likely to say that sniping is a two-person job. Taking down a target \u2026"
+    },
+    {
+        "name": "Sorcerer",
+        "prerequisite": "Charisma +2",
+        "summary": "You coax the magic power in your blood to manifest, accessing magic others don't expect you to have."
+    },
+    {
+        "name": "Soul Warden",
+        "prerequisite": "Trained in Occultism or Trained in Religion; worships Pharasma or a psychopomp usher",
+        "summary": "You consider yourself an honorary  psychopomp \u2014a shepherd of spirits who ensures the cycle of souls progresses unimpeded. Although you're unable to \u2026"
+    },
+    {
+        "name": "Spell Trickster",
+        "prerequisite": "Able to cast spells; Trained in Arcana, Trained in Nature, Trained in Occultism, or Trained in Religion",
+        "summary": "Just as Golarion's merchants scour busy marketplaces for newfound goods, scholars of magic congregate in teahouses, debate at symposia, and haunt the \u2026"
+    },
+    {
+        "name": "Splinter of Finality",
+        "prerequisite": "",
+        "summary": "During the events of the  Night of the Gray Death , the   final blade   known as  Silent Lenore  was overwhelmed by a surge of psychic energy that \u2026"
+    },
+    {
+        "name": "Summoner",
+        "prerequisite": "Charisma 14",
+        "summary": "You have a tenuous connection to an eidolon, a bodiless being that shares your life force, and with effort you can manifest the eidolon into the \u2026"
+    },
+    {
+        "name": "Swashbuckler",
+        "prerequisite": "Charisma +2; Dexterity +2",
+        "summary": "You fight with flair and style, adding swashbuckling tricks to your combat repertoire."
+    },
+    {
+        "name": "Talisman Dabbler",
+        "prerequisite": "",
+        "summary": "The classic idea of magic is that of a hoary wizard, poring over a crumbling book of spells as years pass. But magic is so much more than that\u2014it's \u2026"
+    },
+    {
+        "name": "Thaumaturge",
+        "prerequisite": "Charisma +2",
+        "summary": "Scraps of knowledge have taught you how to exploit the vulnerabilities of creatures and the powers of mystical objects."
+    },
+    {
+        "name": "Thlipit Contestant",
+        "prerequisite": "You have a long prehensile tongue or a tail. At the GM\u2019s discretion, similar flexible appendages, such as tentacles, can be used to qualify instead.",
+        "summary": "According to folklore, the thlipit martial art began with a wager. A group of bored tripkees looking for a little sport devised a game of using their \u2026"
+    },
+    {
+        "name": "Timewracked",
+        "prerequisite": "",
+        "summary": "Those who travel outside the conventional flow of time are often regarded as powerful heroes or ambitious villains. A being with the force of will or \u2026"
+    },
+    {
+        "name": "Undead Slayer",
+        "prerequisite": "Trained in Religion",
+        "summary": "Anywhere  undead  prey upon the living, some brave souls make it their mission to destroy the monsters. Many adventurers are skilled at dispatching \u2026"
+    },
+    {
+        "name": "Ursine Avenger Hood",
+        "prerequisite": "",
+        "summary": "Some items inherit their magic not through an intentional spell or ritual but through generations of use and belief, slowly accumulating power and \u2026"
+    },
+    {
+        "name": "Venture-Gossip",
+        "prerequisite": "Pathfinder Agent Dedication; member of the Pathfinder Society",
+        "summary": " Nethys Note: This is a part of the April Fool's content from Paizo's blogs.   Venture-Gossip is not only the name of a beloved agent of the \u2026"
+    },
+    {
+        "name": "Viking",
+        "prerequisite": "Trained in Athletics",
+        "summary": "To go \u201ca-viking\u201d is to raid by sea, and thus vikings have spread far and wide. Some have even settled in the very communities they once raided. \u2026"
+    },
+    {
+        "name": "Vindicator",
+        "prerequisite": "Vindicator",
+        "summary": "Many undead and supernatural predators have the ability to blend unseen among the general population, preying on mortals completely unaware of their \u2026"
+    },
+    {
+        "name": "Wandering Chef",
+        "prerequisite": "",
+        "summary": "Cooking is important to every culture that requires food for sustenance. From the most gilded palace in Goka all the way to the most hidden campfire \u2026"
+    },
+    {
+        "name": "Warshard Warrior",
+        "prerequisite": "",
+        "summary": "From the earliest days of civilization, many heroes became associated with their legendary weapons. These brave adventurers, who faced many mythic \u2026"
+    },
+    {
+        "name": "Weapon Improviser",
+        "prerequisite": "trained in martial weapons",
+        "summary": "As far as you're concerned, the best weapon to wield is the one that your opponents never see coming. By knowing how to fight effectively with \u2026"
+    },
+    {
+        "name": "Wild Mimic",
+        "prerequisite": "Trained in Nature",
+        "summary": "Wild beasts of all kinds can be found outside of the cities and villages of Golarion, and many possess remarkable abilities that help them survive, \u2026"
+    },
+    {
+        "name": "Wildspell",
+        "prerequisite": "",
+        "summary": "Magic was woven into  the Universe  from its creation, a source of power to be tapped by those with the skill, knowledge, or gift. This power isn\u2019t \u2026"
+    },
+    {
+        "name": "Winged Warrior",
+        "prerequisite": "you have permanent wings (such as from an ancestry or graft)",
+        "summary": "Nature provided wings to certain creatures to help them soar above predators or reach food hanging from tall trees or the side of a cliff. When those \u2026"
+    },
+    {
+        "name": "Witch",
+        "prerequisite": "Intelligence +2",
+        "summary": "You have heard the whispers of a distant patron, who sent an emissary to teach you powerful magic."
+    },
+    {
+        "name": "Wizard",
+        "prerequisite": "Intelligence +2",
+        "summary": "You have dabbled in the arcane arts and, through discipline and academic study, learned how to cast a few spells.",
+        "id": "218",
+        "url": "https://2e.aonprd.com/Archetypes.aspx?ID=218",
+        "image_url": "https://2e.aonprd.com/Images/Archetypes/Archetype_Wizard.webp"
+    },
+    {
+        "name": "Wrestler",
+        "prerequisite": "Trained in Athletics",
+        "summary": "Wrestlers are athletes who pit their strength and skill against powerful foes. Specializing in a variety of grabs, holds, and strikes, wrestlers are \u2026"
+    },
+    {
+        "name": "Aldori Duelist",
+        "prerequisite": "trained in martial weapons",
+        "summary": "You have sworn the Aldori swordpact and studied the art of Aldori dueling, a famed school of bladecraft that has been passed down for over a \u2026",
+        "id": "324",
+        "url": "https://2e.aonprd.com/Archetypes.aspx?ID=324",
+        "image_url": "https://2e.aonprd.com/Images/Archetypes/Archetype_Aldori_Duelist_Remastered.webp"
+    },
+    {
+        "name": "Alkenstar Agent",
+        "prerequisite": "Trained in Deception; trained at least one firearm",
+        "summary": "Outwardly dashing outlaws or silent, deadly bravos, these masters of combat and culture must hone a variety of skills to serve as secret agents and \u2026"
+    },
+    {
+        "name": "Alter Ego",
+        "prerequisite": "Trained in Deception; Trained in Stealth",
+        "summary": "A highly guarded castle in the middle of an extravagant ball, the headquarters of a city's infamous thieves' guild, the locked room in the back of a \u2026"
+    },
+    {
+        "name": "Animal Trainer",
+        "prerequisite": "Trained in Nature",
+        "summary": "You have befriended an animal to serve as an able assistant and loyal guardian.\r\n"
+    },
+    {
+        "name": "Beast Gunner",
+        "prerequisite": "Trained in Arcana; Trained in Crafting; expert with at least one type of firearm, you own a beast gun and have slain the type of creature associated with your beast gun in a fair hunt (see above)",
+        "summary": "The art of creating the weapons most commonly referred to as \u201c beast guns \u201d is truly ancient, with the first iterations of the weapons created on the \u2026"
+    },
+    {
+        "name": "Bellflower Tiller",
+        "prerequisite": "Charisma 14; Expert in Stealth; Expert in Survival; member of the Bellflower Network",
+        "summary": "Bellflower tillers handle most of the ground-level efforts of freeing slaves and escorting them to safety. They use farming-related code words to \u2026"
+    },
+    {
+        "name": "Blackjacket",
+        "prerequisite": "trained in medium armor and martial weapons",
+        "summary": "Members of the Mercenary League undergo some of the best military training in Golarion. Recruits might come in with little experience, but all leave \u2026"
+    },
+    {
+        "name": "Bright Lion",
+        "prerequisite": "member of the Bright Lions; not a worshipper of Walkena; Trained in Stealth",
+        "summary": "You work to counteract Walkena's cruelty and liberate the people of Mzali."
+    },
+    {
+        "name": "Bullet Dancer",
+        "prerequisite": "expert in unarmored defense and trained in unarmed attack",
+        "summary": "While most monastic orders and traditional fighting schools shun firearms as loud and unreliable technology for unskilled conscripts, you fuse \u2026"
+    },
+    {
+        "name": "Butterfly Blade",
+        "prerequisite": "trained in butterfly swords",
+        "summary": "You've trained in one of Goka's oldest traditions of espionage, intimidation, and combat mastery. You use your skills to learn about your enemies and \u2026"
+    },
+    {
+        "name": "Campfire Chronicler",
+        "prerequisite": "",
+        "summary": "You follow in the footsteps of Isthralei, an old god of Sarkoris dedicated to protecting and assisting travelers in return for a story of their \u2026"
+    },
+    {
+        "name": "Captain",
+        "prerequisite": "Charisma +2; you don't have an animal companion, construct companion, or other companion that functions similarly",
+        "summary": "Whether it\u2019s your personal prowess, your fearsome reputation, or your skill at bringing out the best in others, you inspire people to flock to your \u2026"
+    },
+    {
+        "name": "Cathartic Mage",
+        "prerequisite": "Charisma 14 or ability to cast spells from spell slots",
+        "summary": "Emotions are powerful, and you can tap into that power to enhance your magic for a time. You learn to harness a particular emotional state under the \u2026"
+    },
+    {
+        "name": "Corpse Tender",
+        "prerequisite": "Trained in Religion; evil alignment",
+        "summary": "You tend to  mindless   undead , such as the  zombie  farmhands and farm animals throughout Geb."
+    },
+    {
+        "name": "Demolitionist",
+        "prerequisite": "",
+        "summary": "As rippling explosions bring a castle's walls tumbling down, you grin and wipe the stone dust of your handiwork from your face. Brute force might \u2026"
+    },
+    {
+        "name": "Draconic Acolyte",
+        "prerequisite": "Trained in Arcana",
+        "summary": "You possess an item infused with draconic essence, whether that be an item of significance gifted to you from a powerful dragon, a piece of treasure \u2026"
+    },
+    {
+        "name": "Dragon Disciple",
+        "prerequisite": "",
+        "summary": "The rippling waves of fear, the rustling of thick scales, and the beat of immense wings signal the arrival of a great dragon. The awe-inspiring \u2026"
+    },
+    {
+        "name": "Drake Rider",
+        "prerequisite": "Trained in Nature; Charisma +1",
+        "summary": "A dragon chooses its rider.   Only a few are worthy. \u201cHaving the soul of a dragon\u201d is an apt Avistani saying for individuals who show indomitable \u2026"
+    },
+    {
+        "name": "Eagle Knight",
+        "prerequisite": "Trained in Diplomacy; Trained in Society",
+        "summary": "When most people around the Inner Sea think of Andoran, the first thing they picture is an Eagle Knight, resplendent in blue and silver armor. Ever \u2026"
+    },
+    {
+        "name": "Edgewatch Detective",
+        "prerequisite": "Intelligence 14 or Wisdom 14",
+        "summary": "You're a specially trained detective for the Edgewatch guard precinct in Absalom.\r\n"
+    },
+    {
+        "name": "Eldritch Researcher",
+        "prerequisite": "Trained in Arcana; Trained in Occultism",
+        "summary": "An eager student of occult lore, you enjoy reading rare or forgotten tomes with ancient rituals and hidden secrets. You connect disparate facts to \u2026"
+    },
+    {
+        "name": "Fan Dancer",
+        "prerequisite": "Trained in Performance",
+        "summary": "Fan dancers display exceptional elegance and control as they drift across the stage, specializing in spinning movements that are, at times, like a \u2026"
+    },
+    {
+        "name": "Firebrand Braggart",
+        "prerequisite": "Charisma 14; second mark member of the Firebrands",
+        "summary": "The following archetype is available to prominent members of the Firebrands.    Many Firebrands travel the Inner Sea region drawing attention to \u2026"
+    },
+    {
+        "name": "Firework Technician",
+        "prerequisite": "Trained in Crafting",
+        "summary": "The brilliant display of cascading lights and flickering aerial flowers, the thunderous boom, the sizzling crackle, and piercing screech\u2014these are \u2026"
+    },
+    {
+        "name": "Five-breath Vanguard",
+        "prerequisite": "Two of the five elemental stances (Ironblood Stance, Mountain Stance, Reflective Ripple Stance, Stoked Flame Stance, and Tangled Forest Stance)",
+        "summary": "Tian elementalists of the School of Five Breaths seek mastery over the five elemental martial arts expressed by the following stances:  Ironblood \u2026"
+    },
+    {
+        "name": "Folklorist",
+        "prerequisite": "Trained in Performance",
+        "summary": "Folklorists are welcome across the Mwangi Expanse for the entertaining stories they tell and the counsel they impart. However, those who take the art \u2026"
+    },
+    {
+        "name": "Game Hunter",
+        "prerequisite": "Trained in Survival",
+        "summary": "Game hunters find, follow, and slay game animals, then honor their fallen rivals by securing and preserving a trophy of the kill. Many game hunters \u2026"
+    },
+    {
+        "name": "Ghost Eater",
+        "prerequisite": "Trained in Occultism or Trained in Religion",
+        "summary": "The warriors of Minata frequently contend with lost spirits of the Taumatan people that haunt their shattered lands to this day. These Minatan \u2026"
+    },
+    {
+        "name": "Ghost Hunter",
+        "prerequisite": "Trained in Occultism or Trained in Religion",
+        "summary": " Ghosts  have a wide range of capabilities and features\u2014 no two ghosts are exactly alike, as the nature of their abilities depends as much upon who \u2026"
+    },
+    {
+        "name": "Golden League Xun",
+        "prerequisite": "Master in Underworld Lore",
+        "summary": "You've become a xun, a powerful gang enforcer."
+    },
+    {
+        "name": "Golem Grafter",
+        "prerequisite": "expert in Arcana and Crafting, or an ally with expert proficiency in those skills willing to augment you",
+        "summary": "You have replaced a portion of your body with artifice of the kind used to create  golems , fortifying your flesh with the unyielding might of \u2026"
+    },
+    {
+        "name": "Gray Gardener",
+        "prerequisite": "Trained in Deception",
+        "summary": " The following contains SPOILERS for the  Night of the Gray Death  adventure!     The Gray Gardeners are the remorseless executioners of Galt. Prior \u2026"
+    },
+    {
+        "name": "Gunslinger",
+        "prerequisite": "Dexterity +2",
+        "summary": "You like a weapon that makes an impression almost as much as you like making an impression."
+    },
+    {
+        "name": "Halcyon Speaker",
+        "prerequisite": "Magaambyan Attendant Dedication; member of the Magaambya of conversant rank",
+        "summary": "One of Old-Mage Jatembe\u2019s central lessons was that magic was magic, no matter what the source. Though the Magaambya seeks to hold true to Jatembe\u2019s \u2026"
+    },
+    {
+        "name": "Hallowed Necromancer",
+        "prerequisite": "Expert in Religion; good alignment, able to cast spells using spell slots, able to cast at least one necromancy spell",
+        "summary": "It's quite common for mages of all sorts to study  necromancy \u2014the surprisingly diverse school holds the secrets of  positive  and  negative  energy, \u2026"
+    },
+    {
+        "name": "Harrower",
+        "prerequisite": "",
+        "summary": "Whether or not the revelations and divinations of a typical harrow card reading are trustworthy, none can deny that the strange powers wielded by the \u2026"
+    },
+    {
+        "name": "Hellbreaker",
+        "prerequisite": "",
+        "summary": "Founded in Isger to protest against the injustice and apathy of their faraway rulers in Cheliax, the Hellbreakers League is a young but growing rebel \u2026"
+    },
+    {
+        "name": "Hellknight",
+        "prerequisite": "Hellknight Armiger Dedication; lawful alignment; member of a Hellknight Order; passed the Hellknight Test",
+        "summary": "Hellknights are among the fiercest warriors in the Inner Sea region, as they have emerged from hell-forged trials ready to serve as faceless bastions \u2026"
+    },
+    {
+        "name": "Hellknight Armiger",
+        "prerequisite": "member of a Hellknight Order; trained in heavy armor as well as your order's favored weapon",
+        "summary": "You have presented yourself to a Hellknight citadel as a candidate to become a fearsome Hellknight. You believe that all who live must be forced to \u2026"
+    },
+    {
+        "name": "Hellknight Signifer",
+        "prerequisite": "spellcasting class feature; Hellknight Armiger Dedication; lawful alignment; member of a Hellknight Order; passed the Hellknight Test",
+        "summary": "Signifers are the powerful and enigmatic Hellknight spellcasters who support and sometimes lead other Hellknights on their missions to enforce \u2026"
+    },
+    {
+        "name": "Inventor",
+        "prerequisite": "Intelligence +2",
+        "summary": "You revel in the creation of clever inventions, deploying your brilliance to defeat your foes. Explosives, gadgets, and innovative technologies? You \u2026"
+    },
+    {
+        "name": "Iridian Choirmaster",
+        "prerequisite": "Trained in Occultism",
+        "summary": "When the Iridian Fold disbanded, a splinter sect of this philosophical group called the Iridian Choir, which originated within the city of Ular Kel \u2026"
+    },
+    {
+        "name": "Jalmeri Heavenseeker",
+        "prerequisite": "Student of Perfection Dedication, or you've trained with a champion of the Challenge of Sky and Heaven",
+        "summary": "Certain martial artists dedicate themselves to fighting in Jalmeray's Challenge of Sky and Heaven. These individuals devote themselves to the \u2026"
+    },
+    {
+        "name": "Juggler",
+        "prerequisite": "Dexterity 14",
+        "summary": "You\u2019re a skilled performer, with impressive balance and coordination that help you greatly in battle."
+    },
+    {
+        "name": "Knight Reclaimant",
+        "prerequisite": "Trained in Stealth; Trained in Survival; any non-evil alignment; member of the Knights of Lastwall of knight rank",
+        "summary": "Knights reclaimant spend much of their time amid the horrors of the Gravelands, rescuing civilians that remain and striking back against the \u2026"
+    },
+    {
+        "name": "Knight Vigilant",
+        "prerequisite": "Trained in Religion; any good alignment; member of the Knights of Lastwall of knight rank",
+        "summary": "Taking their lead from heroic stories of the Shining Crusade, the knights vigilant stand as a courageous example of morality and honor."
+    },
+    {
+        "name": "Lastwall Sentry",
+        "prerequisite": "member of the Knights of Lastwall; Shield Block",
+        "summary": "While the nation of Lastwall is gone, leaving only the horror of the Gravelands behind, you refuse to give up and renounce your oaths. You\u2019ve renewed \u2026"
+    },
+    {
+        "name": "Lepidstadt Surgeon",
+        "prerequisite": "Trained in Medicine; attended the University of Lepidstadt",
+        "summary": "To be a surgeon is to be akin to a god. In your hands is the power of life and death. With a flick of a knife, you can excise a tumor. With another, \u2026"
+    },
+    {
+        "name": "Lion Blade",
+        "prerequisite": "member of the Lion Blades; Trained in Performance",
+        "summary": "Taldor\u2019s official teeth in the shadows was founded in 1629 ar by Yanual and Izora, children of the late Goscelyn II and half-siblings to the Bastard \u2026"
+    },
+    {
+        "name": "Living Monolith",
+        "prerequisite": "Ancient Osiriani and Sphinx languages; Trained in Crafting",
+        "summary": "You have delved into ancient sphinx magic to imbue your body and soul with the patience and strength of stone, as you work to create a special \u2026"
+    },
+    {
+        "name": "Magaambyan Attendant",
+        "prerequisite": "Trained in Arcana or Trained in Nature; member of the Magaambya of attendant rank",
+        "summary": "Magaambyans attendants have become full members of the Magaambya and begun to learn the secrets of the university. Not all Magaambyan attendants \u2026"
+    },
+    {
+        "name": "Magic Warrior",
+        "prerequisite": "ability to cast focus spells",
+        "summary": "You mix magic and martial prowess, following in the tradition of the Ten Magic Warriors of Old-Mage Jatembe."
+    },
+    {
+        "name": "Mammoth Lord",
+        "prerequisite": "Ride",
+        "summary": "The Kellid people of the far north are collectively known as the Mammoth Lords, but this name is something of a generalization. True Mammoth Lords \u2026"
+    },
+    {
+        "name": "Munitions Master",
+        "prerequisite": "light mortar innovation",
+        "summary": "Invention often springs from necessity, and nothing creates necessity like war. While many inventors innovate new tools or seek fortune or fame, the \u2026"
+    },
+    {
+        "name": "Nantambu Chime-Ringer",
+        "prerequisite": "Trained in Performance; Trained in Society",
+        "summary": "The Chime-Ringers serve as Nantambu's elite town guard, keeping the peace while carrying on ancient traditions of crafting chimes in metal, bamboo, \u2026"
+    },
+    {
+        "name": "Oatia Skysage",
+        "prerequisite": "Trained in Occultism",
+        "summary": "The tradition of Oatia skysages stems from a small sect of dedicated stargazers on Castrovel. To better study the celestial mantle, these eccentric \u2026"
+    },
+    {
+        "name": "Oozemorph",
+        "prerequisite": "",
+        "summary": "You have suffered from the deadly touch of an ooze or other amorphous creature, like a  gibbering mouther  or a  shoggoth , and have come away \u2026"
+    },
+    {
+        "name": "Ostilli Host",
+        "prerequisite": "Trained in Arcana or Trained in Nature",
+        "summary": "Ostillis are amorphous organisms that combine characteristics of both plants and animals. Typically found in subterranean environments, they can \u2026"
+    },
+    {
+        "name": "Overwatch",
+        "prerequisite": "expert in Perception",
+        "summary": "With a stalwart mind and sharp eyes, you observe the battlefield as though you and your allies are pieces on a chessboard. By predicting dangers and \u2026"
+    },
+    {
+        "name": "Pactbinder",
+        "prerequisite": "Trained in Diplomacy; Trained in Arcana, Trained in Nature, Trained in Occultism, or Trained in Religion",
+        "summary": "Some people feel that the universe is a constant struggle. Good against evil, order against chaos, civilization against nature, life against death \u2026"
+    },
+    {
+        "name": "Palatine Detective",
+        "prerequisite": "investigator",
+        "summary": "You are an elite agent of the  Esoteric Order of the Palatine Eye . Separated from the regular members of this obscure league of scholars and \u2026"
+    },
+    {
+        "name": "Pathfinder Agent",
+        "prerequisite": "member of the Pathfinder Society",
+        "summary": "You\u2019re a field agent of the globe-trotting Pathfinder Society, sworn to report, explore, and cooperate. You explore the world, gathering artifacts \u2026"
+    },
+    {
+        "name": "Pistol Phenom",
+        "prerequisite": "trained in at least one type of one-handed firearm; Trained in Deception; Trained in Performance",
+        "summary": "You treat combat as an art and your pistol as an extension of your performance. You might wield a single pistol, a pair of pistols, or a pistol \u2026"
+    },
+    {
+        "name": "Prophet of Kalistrade",
+        "prerequisite": "trained in Mercantile Lore; Trained in Society; Charisma +2",
+        "summary": "You\u2019ve dedicated your life to the teachings of  Kalistrade , a mystic whose writings promise success through a restrictive set of practices. When you \u2026"
+    },
+    {
+        "name": "Provocator",
+        "prerequisite": "Strength 14; Charisma 14",
+        "summary": "The provocator is a gladiator who mixes brilliant performance with mastery of weapons."
+    },
+    {
+        "name": "Razmiran Priest",
+        "prerequisite": "Trained in Crafting; Trained in Deception",
+        "summary": "You are a Razmiran priest, initiated in the 31 Steps, the doctrines of  Razmir's  religion. You were trained at the Exalted Lodge or another of the \u2026"
+    },
+    {
+        "name": "Red Mantis Assassin",
+        "prerequisite": "trained in sawtooth sabers; worshipper of Achaekek; member of the Red Mantis assassins",
+        "summary": "You are a Red Mantis assassin, inducted by  Achaekek , He Who, and sworn to chase your prey to the end of the world and beyond. While many Red Mantis \u2026"
+    },
+    {
+        "name": "Ritualist",
+        "prerequisite": "Expert in Occultism, Expert in Arcana, Expert in Nature, or Expert in Religion",
+        "summary": "While some learn the art of ritual casting through rigorous study, other gifted individuals may find that a combination of natural talent and luck \u2026"
+    },
+    {
+        "name": "Rivethun Emissary",
+        "prerequisite": "Trained in Diplomacy; Trained in Religion",
+        "summary": "Rivethun emissaries form bonds with external spirits, using their own spiritual power as an anchor. This is a diplomatic endeavor, not a sycophantic \u2026"
+    },
+    {
+        "name": "Rivethun Invoker",
+        "prerequisite": "Trained in Athletics; Trained in Religion",
+        "summary": "Rivethun invokers manifest the spirits within their own body, gaining magical powers that bolster their physical form. They can ignore pain, defy \u2026"
+    },
+    {
+        "name": "Rivethun Involutionist",
+        "prerequisite": "Trained in Nature; Trained in Religion",
+        "summary": "Rivethun involutionists leverage their connection to the spirit world to cast spells. This magic can also grant them a powerful spirit companion."
+    },
+    {
+        "name": "Runescarred",
+        "prerequisite": "Trained in Arcana",
+        "summary": "The rune magic of Thassilon and its descendant nations has left its mark on your very flesh. As a runescarred, you have an unusually close connection \u2026"
+    },
+    {
+        "name": "Scrollmaster",
+        "prerequisite": "expert in any Lore skill; member of the Pathfinder Society affiliated with the School of Scrolls",
+        "summary": "Members who align themselves with the Scrolls branch of the Pathfinder Society are fervent seekers of lore, experts in esoterica, and masters of the \u2026"
+    },
+    {
+        "name": "Scrounger",
+        "prerequisite": "Trained in Crafting",
+        "summary": "You have spent countless hours disassembling and rebuilding complex items to learn how they work, giving you the skill to create just about anything \u2026"
+    },
+    {
+        "name": "Shadowcaster",
+        "prerequisite": "ability to cast spells",
+        "summary": "The world is full of shadows, but each living creature possesses a form of inner light to ward against that ever-present darkness\u2026 all except \u2026"
+    },
+    {
+        "name": "Shieldmarshal",
+        "prerequisite": "",
+        "summary": "Gunplay isn't enough to uphold Alkenstar's laws; when firearms are readily available to criminals and the corrupt, relying solely on firepower isn't \u2026"
+    },
+    {
+        "name": "Sixth Pillar",
+        "prerequisite": "Dexterity 14; Expert in Acrobatics; ability to cast spells",
+        "summary": "The Sixth Pillar follows a tradition that blends martial arts with magic. Traditionally, this is a way to better focus and harness innate or \u2026"
+    },
+    {
+        "name": "Sleepwalker",
+        "prerequisite": "Expert in Occultism",
+        "summary": "Many think of mental realms and mindscapes as rare and elaborate constructions, forgetting that everyone creates their own mental realm when they \u2026"
+    },
+    {
+        "name": "Soulforger",
+        "prerequisite": "Wisdom 14 or ability to cast divine spells",
+        "summary": "Your devotion to a cause unifies your soul with an armament tethered to the very essence of your spirit."
+    },
+    {
+        "name": "Spellmaster",
+        "prerequisite": "Intelligence 14, Wisdom 14, or Charisma 14; ability to cast focus spells; member of the Pathfinder Society affiliated with the School of Spells",
+        "summary": "Those who train under the Master of Spells concern themselves with all matters related to magic. Though not all members of the School of Spells are \u2026"
+    },
+    {
+        "name": "Spellshot",
+        "prerequisite": "way of the spellshot",
+        "summary": "Spellshots aren't ordinary  gunslingers . They come from a tradition of ancient secrets and principles, which they temper with modern innovation and \u2026"
+    },
+    {
+        "name": "Spirit Warrior",
+        "prerequisite": "",
+        "summary": "Warriors can draw powers from the joy and the sadness in their hearts, spiritual gifts and burdens they can share and give to others. They cultivate \u2026"
+    },
+    {
+        "name": "Staff Acrobat",
+        "prerequisite": "Dexterity 16; Trained in Acrobatics; Trained in Athletics; trained with at least one of the following weapons: staff, bo staff, halfling sling staff, or any weapon in the spear or polearm group (referred to in this archetype as \u201cyour staff\u201d)",
+        "summary": "You can perform amazing acts in and out of combat when you have a spear, staff, or polearm."
+    },
+    {
+        "name": "Stalwart Defender",
+        "prerequisite": "trained in light armor",
+        "summary": "The military history of the  dwarves  is a story of largely defensive combat and tactics, whether it be as simple as guarding a camp during the Quest \u2026"
+    },
+    {
+        "name": "Sterling Dynamo",
+        "prerequisite": "",
+        "summary": "While many people across Golarion use prosthetic devices, you've acquired and outfitted yourself with a particularly advanced combat model of \u2026"
+    },
+    {
+        "name": "Stone Brawler",
+        "prerequisite": "Constitution 14",
+        "summary": "Stone brawlers learn to encase themselves in temporary, magical rock that empowers their unarmed strikes and defends their bodies. Their relationship \u2026"
+    },
+    {
+        "name": "Stonebound",
+        "prerequisite": "Constitution 14",
+        "summary": "A stonebound is a devoted sentinel who draws on the power of the earth and stone to protect their people.   While stonebound are most commonly found \u2026"
+    },
+    {
+        "name": "Student of Perfection",
+        "prerequisite": "powerful fist or expert in unarmed attacks; member of a House of Perfection",
+        "summary": "You studied martial arts at Jalmeray\u2019s Houses of Perfection."
+    },
+    {
+        "name": "Swarmkeeper",
+        "prerequisite": "Trained in Nature",
+        "summary": "Many civilizations throughout history have benefited from a symbiotic relationship with insects. A community might raise insects for certain \u2026"
+    },
+    {
+        "name": "Swordmaster",
+        "prerequisite": "Strength 14, Dexterity 14, or Constitution 14; member of the Pathfinder Society affiliated with the School of Swords",
+        "summary": "Though the ultimate goal of the Pathfinder society is to learn, knowledge cannot be spread if those who discover it fail to come back alive. The \u2026"
+    },
+    {
+        "name": "Tattooed Historian",
+        "prerequisite": "Constitution +1; Trained in Belkzen Lore, Trained in Orc Lore, Trained in Orc Pantheon Lore, or (at the GM's discretion) a related Lore skill",
+        "summary": "In Belkzen, an important part of a storyteller\u2019s arsenal is body art\u2014anything from depictions of past events to illustrate a legend to gruesome scars \u2026"
+    },
+    {
+        "name": "Time Mage",
+        "prerequisite": "You have a spellcasting class feature.",
+        "summary": "Magic leaves its brand on those who practice it. The veteran pyromancer bears the scorch marks of lessons learned. The archdruid grows to resemble \u2026"
+    },
+    {
+        "name": "Trapsmith",
+        "prerequisite": "Snarecrafter Dedication or Snare Specialist",
+        "summary": "Wielding a wrench or blowtorch, you manufacture  snares  that whir and tick with delicate precision. Your best work requires the right materials\u2014a \u2026"
+    },
+    {
+        "name": "Trick Driver",
+        "prerequisite": "",
+        "summary": "While  cavaliers  follow an old and tired tradition of mounted combat, you take a more modern road. Through aggressive use of  vehicles , you roll \u2026"
+    },
+    {
+        "name": "Turpin Rowe Lumberjack",
+        "prerequisite": "Trained in Survival",
+        "summary": "You are a feller of trees and a skilled axe wielder, trained in the art of forestry by the hard-working loggers of Turpin Rowe.\r\n"
+    },
+    {
+        "name": "Twilight Speaker",
+        "prerequisite": "Trained in Society; you are an Ilverani elf",
+        "summary": "As a religious and diplomatic representative of  Findeladlara \u2014and all Ilverani of the north\u2014you see it as your duty to befriend shorter-lived \u2026"
+    },
+    {
+        "name": "Ulfen Guard",
+        "prerequisite": "member of the Ulfen Guard; Trained in Athletics; Trained in Intimidation",
+        "summary": "Founded by Hyrotte I in 3129 ar, the Ulfen Guard is loyal to the Primogen Crown only, a promise upheld by a member\u2019s dedication to their principals. \u2026"
+    },
+    {
+        "name": "Undead Master",
+        "prerequisite": "evil alignment",
+        "summary": "Not everyone with an interest in the  undead  raises a vast army of faceless, disposable minions. You prefer to cultivate a more personal \u2026"
+    },
+    {
+        "name": "Unexpected Sharpshooter",
+        "prerequisite": "",
+        "summary": "Some people say you must be the luckiest soul in all of Golarion to still be alive and kicking after all the dangers you've seen. Others say that, \u2026"
+    },
+    {
+        "name": "Vehicle Mechanic",
+        "prerequisite": "Intelligence +2; Trained in Crafting",
+        "summary": "You have always felt that vehicles are as much works of art as they are means of transportation. It doesn't matter if it's as common as a chariot or \u2026"
+    },
+    {
+        "name": "Verduran Shadow",
+        "prerequisite": "Trained in Stealth; Trained in Survival",
+        "summary": "Primal energy exists for far more than being gathered, shaped, and directed by  druids ; like air currents, it flows naturally through an \u2026"
+    },
+    {
+        "name": "Vigilante",
+        "prerequisite": "Trained in Deception",
+        "summary": "As a vigilante, you have two faces: a public persona, and a secret identity that lets you hide your extralegal actions from polite society. Your \u2026"
+    },
+    {
+        "name": "War Mage",
+        "prerequisite": "You have a spellcasting class feature.",
+        "summary": "You learned the arcane craft at a war college, focusing less on theory and scholarship and more on applied magic and how best to leverage spellcraft \u2026"
+    },
+    {
+        "name": "Warrior Of Legend",
+        "prerequisite": "Warrior of legend",
+        "summary": "It is said that the greatest heroes are often stalked by an implacable doom, the shadow cast by the light of their deeds. Such warriors of legend \u2026"
+    },
+    {
+        "name": "Wylderheart",
+        "prerequisite": "member of the Wylderhearts",
+        "summary": "You\u2019re a defender of nature, called to protect the world from the corrupting influence of demons. You might use a bow in the vein of your \u2026"
+    },
+    {
+        "name": "Zephyr Guard",
+        "prerequisite": "",
+        "summary": "You are one of the Zephyr Guard, professional soldiers who protect Katapesh from military threats, economic sabotage, and elite thieves."
+    },
+    {
+        "name": "Chronoskimmer",
+        "prerequisite": "",
+        "summary": "The flow of time is an unstoppable force. Most are carried downstream inexorably, like a leaf floating on a river. You, however, somehow fell out of \u2026"
+    },
+    {
+        "name": "Clockwork Reanimator",
+        "prerequisite": "Trained in Crafting",
+        "summary": "You have unlocked the secret connections between necromancy and clockwork locomotion, giving you the unholy power to reanimate corpses. These minions \u2026"
+    },
+    {
+        "name": "Crystal Keeper",
+        "prerequisite": "Trained in Elven Lore or Trained in Society",
+        "summary": "In the era before Earthfall, the elven people of Golarion exhibited a wide range of mastery over magic. A sect of elves who venerated the goddess \u2026"
+    },
+    {
+        "name": "Cultivator",
+        "prerequisite": "Trained in Occultism",
+        "summary": "Cultivators are seekers of immortality who practice occult disciplines to refine their qi. By gathering and purifying vast quantities of qi and \u2026"
+    },
+    {
+        "name": "Curse Maelstrom",
+        "prerequisite": "You are cursed or have previously been cursed.",
+        "summary": "Some folks are ridden with bad luck: the rations they were counting on turn out to be spoiled, the ship they were hoping to catch sinks in the \u2026"
+    },
+    {
+        "name": "Exemplar",
+        "prerequisite": "Strength +2 or Dexterity +2",
+        "summary": "You have awakened a tiny spark of divinity within yourself, either through your deeds or through exposure to a source of divine power. As you nurture \u2026"
+    },
+    {
+        "name": "Ghost",
+        "prerequisite": "You died and returned as a ghost.",
+        "summary": "Your ties to the living world cling to you in death, your unfinished business reducing you to a spirit. Your soul carries on, but your body is gone. \u2026"
+    },
+    {
+        "name": "Ghoul",
+        "prerequisite": "You were killed by ghoul fever.",
+        "summary": "You died from the necrotic disease known as ghoul fever and rose anew as a ravenous  ghoul , forever craving the flesh of sapient creatures. While \u2026"
+    },
+    {
+        "name": "Kitharodian Actor",
+        "prerequisite": "Trained in Performance",
+        "summary": "Some performers at Kitharodian Academy are so dedicated to method acting that they can completely disappear into roles in a manner that\u2019s almost \u2026"
+    },
+    {
+        "name": "Lich",
+        "prerequisite": "Expert in Crafting; living creature, ability to cast 6th-level or higher spells from spell slots, completed ritual to become a lich and crafted a _soul cage_",
+        "summary": "The path to  lichdom  is long and winding, with many pitfalls that overcome all but the most accomplished and precise spellcasters. Despite the \u2026"
+    },
+    {
+        "name": "Living Vessel",
+        "prerequisite": "",
+        "summary": "With the dawning of a new era comes the need for a new seat of power, and what better way to show your coming master your devotion than by \u2026"
+    },
+    {
+        "name": "Mortal Herald",
+        "prerequisite": "Worshiper of a specific deity; Master in master in Religion or your deity\u2019s divine skill",
+        "summary": "When a follower earns the respect and trust of their god, the god sometimes grants that worshipper a great boon in the form of enhanced divine power. \u2026"
+    },
+    {
+        "name": "Mummy",
+        "prerequisite": "you are dead and were mummified (by natural or ritualistic means)",
+        "summary": "Mummification is a common funereal rite across the breadth of Golarion throughout the ages. Becoming a living  mummy \u2014one capable of both motion and \u2026"
+    },
+    {
+        "name": "Necrologist",
+        "prerequisite": "ability to cast spells from spell slots, ability to cast _summon undead_ ",
+        "summary": "Though some may think it morbid, you spend your time compiling and studying lists of the dead, from town or church records that date back hundreds of \u2026"
+    },
+    {
+        "name": "Pactbound Initiate",
+        "prerequisite": "Trained in Nature; Erutaki or Giant language, must have earned the trust of a saumen kar who initiates you into the archetype",
+        "summary": "Saumen kar can initiate a member of another ancestry into their pact, imbuing the creature with their power and their curse. Over time, this pact \u2026"
+    },
+    {
+        "name": "Psychic Duelist",
+        "prerequisite": "Trained in Occultism; you have been in a psychic duel",
+        "summary": "The mental landscape of the psychic duel rises to meet your steps and reshapes at your touch. Shattered minds and broken wills from your previous \u2026"
+    },
+    {
+        "name": "Runelord",
+        "prerequisite": "runelord",
+        "summary": "You\u2019ve learned arcane magic, following the path of the runelords. You learn the secrets of runic magic, the building blocks of magic. But be warned: \u2026"
+    },
+    {
+        "name": "Sanguimancer",
+        "prerequisite": "",
+        "summary": "There\u2019s a balance in blood. The arteries send surges of the fresh, life-giving liquid to the furthest reaches of the body, even as the veins return \u2026"
+    },
+    {
+        "name": "Scions of Domora",
+        "prerequisite": "Familiar Master Dedication; you have befriended a spirit guide and it bonded with you using its Bond to Mortal ability.",
+        "summary": "Centuries ago, Domora Hume founded a lakeside city that would become one of the largest in western Sarkoris. When the city was attacked by raiders, \u2026"
+    },
+    {
+        "name": "Seneschal",
+        "prerequisite": "Seneschal Witch",
+        "summary": "Whether dead or simply missing, your patron has gone silent, and you can no longer hear its whisper. While other witches might find this silence \u2026"
+    },
+    {
+        "name": "Starlit Sentinel",
+        "prerequisite": "",
+        "summary": "Though the zodiac is known throughout Tian Xia for subtly watching over the continent, sometimes the 12 constellations find more direct action \u2026"
+    },
+    {
+        "name": "Vampire",
+        "prerequisite": "You were a killed by a vampire drinking your blood.",
+        "summary": "After being exsanguinated by a  vampire , you've risen again, pulling yourself from the earth as an immortal undead. You're a creature of the night, \u2026"
+    },
+    {
+        "name": "Wellspring Mage",
+        "prerequisite": "wellspring magic",
+        "summary": "The source of your magic buckles against your control, always pressing to be released."
+    },
+    {
+        "name": "Werecreature",
+        "prerequisite": "",
+        "summary": "You\u2019re a werecreature, a humanoid doomed by an ancient primal curse to transform into an animal or an animalhumanoid hybrid under the light of the \u2026"
+    },
+    {
+        "name": "Worm Caller",
+        "prerequisite": "Trained in Nature or Trained in Cave Worm Lore",
+        "summary": "You follow the ancient  hryngar  tradition of the worm caller\u2014mystics who can call upon the strength and destructive force of the mighty  cave worms  \u2026"
+    },
+    {
+        "name": "Zombie",
+        "prerequisite": "You died and were animated as a husk zombie.",
+        "summary": "You are a  zombie , a rotting corpse animated by necromantic magic. Although most zombies are mindless brutes, you're a  husk zombie , preserved \u2026"
+    }
+]

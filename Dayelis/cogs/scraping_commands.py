@@ -32,14 +32,12 @@ class Scraping(commands.Cog):
     @commands.command()
     async def archetype(self, ctx, *, archetype_name: str):
         try:
-            url = self.scraper.search_pathfinder(archetype_name, "Archetype")
-            archetype_embed = await self.scraper.build_archetype_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that archetype. Please check the spelling and try again.")
-            return
+            archetype_embed = await self.scraper.build_archetype_embed(archetype_name)
+            await ctx.send(embed=archetype_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
 
-        await ctx.send(embed=archetype_embed)
-        
     @commands.command()
     async def feats(self, ctx, *, feat_name: str):
         try:
