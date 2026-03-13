@@ -13,7 +13,7 @@ class Scraping(commands.Cog):
     @commands.command()
     async def ancestry(self, ctx, *, ancestry_name: str):
         try:
-            ancestry_embed = await self.scraper.build_ancestry_embed(url, ancestry_name)
+            ancestry_embed = await self.scraper.build_ancestry_embed(ancestry_name)
             await ctx.send(embed=ancestry_embed)
         except Exception as e:
             print("FULL ERROR:", e)
@@ -23,13 +23,11 @@ class Scraping(commands.Cog):
     @commands.command()
     async def cclass(self, ctx, *, class_name: str): # needed to be cclass becuase class is a reserved word in python lol
         try:
-            url = self.scraper.search_pathfinder(class_name, "Class")
-            class_embed = await self.scraper.build_class_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that class. Please check the spelling and try again.")
-            return
-
-        await ctx.send(embed=class_embed)
+            class_embed = await self.scraper.build_class_embed(class_name)
+            await ctx.send(embed=class_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
 
     @commands.command()
     async def archetype(self, ctx, *, archetype_name: str):

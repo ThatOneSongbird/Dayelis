@@ -18,13 +18,15 @@ class ScraperHelper:
         "spells": "https://2e.aonprd.com/Feats.aspx"
         }
         #functions to load jsons on initalization
-        with open("helpers/data/ancestry-table.json") as f:
-            self.ancestries = json.load(f)
-        with open("helpers/data/archetype-table.json") as f:
+        with open("helpers/data/ancestry-table.json", encoding = "utf-8") as f:
+            content = f.read()
+            content = content.replace("\\u00e2\\u20ac\\u00a6",  "...")
+            self.ancestries = json.loads(content)
+        with open("helpers/data/archetype-table.json", encoding = "utf-8") as f:
             self.archetypes = json.load(f)
-        with open("helpers/data/background-table.json") as f:
+        with open("helpers/data/background-table.json", encoding = "utf-8") as f:
             self.backgrounds = json.load(f)
-        with open("helpers/data/class-table.json") as f:
+        with open("helpers/data/class-table.json", encoding = "utf-8") as f:
             self.classes = json.load(f)
         
     async def fetch_page(self, url: str) -> str:
@@ -38,7 +40,7 @@ class ScraperHelper:
     # NOTE: ID matching for creatures may conflict where same-named creatures
     # exist across multiple sources. To be handled in future update.        
     async def fetch_id(self, name:str, category:str):
-        # function to match category to CATEGORY_URLS, and then find the url/id, and write it back to the json
+        # function to match category to CATEGORY_URLS, and then find the url/id
         html = await self.fetch_page(self.CATEGORY_URLS.get(category.lower()))
         soup = BeautifulSoup(html, 'html.parser')
         
@@ -51,8 +53,21 @@ class ScraperHelper:
                 parsed = parse_qs(urlparse(href).query)
                 id = parsed["ID"][0]
                 url = urljoin("https://2e.aonprd.com/", href)
-                return id, url
-        return None, None
+                
+                #fetch for image
+                html2 = await self.fetch_page(url)
+                soup2 = BeautifulSoup(html2, 'html.parser')
+                
+                image_tag = soup2.select_one("div#main.main a img.thumbnail")
+                if image_tag:
+                        src = image_tag.get("src").replace("\\", "/")
+                        image_url = urljoin("https://2e.aonprd.com/", src)
+                else:
+                    image_url = ""
+
+                return id, url, image_url
+                
+        return None, None, ""
         
     # NOTE: FOLLOWING FUNCTIONS ARE PLACEHOLDER AND NOT FINAL. THESE ARE BASIC SHAPES AND WILL ALL BE ADJUSTED. 
     # Character Related ie Class, Ancestry, Feats, Archetypes        
@@ -62,15 +77,17 @@ class ScraperHelper:
         if not entry:
             raise ValueError(f"Could not find {name} in ancestries data.")
 
-        if "id" in entry and entry["id"]:
-            # construct URL directly
+        if "id" in entry and entry["id"] and "image_url" in entry:
+            # construct both urls directly
             url = f"https://2e.aonprd.com/Ancestries.aspx?ID={entry['id']}"
+            image_url = entry["image_url"]
         else:
             # call the fetch_id
-            id, url = await self.fetch_id(name, "ancestries")
+            id, url, image_url = await self.fetch_id(name, "ancestries")
             entry["id"] = id
             entry["url"] = url
-            with open("helpers/data/ancestry-table.json", "w") as f:
+            entry["image_url"] = image_url
+            with open("helpers/data/ancestry-table.json", "w", encoding = "utf-8") as f:
                 json.dump(self.ancestries, f, indent=4)
         
         ancestryName = entry["name"]
@@ -83,7 +100,10 @@ class ScraperHelper:
             url = url,
             description = ancestryDescription,
             color = discord.Color.red(),
-        )        
+        )
+        
+        if image_url:
+            ancestry_embed.set_thumbnail(url=image_url)        
         
         ancestry_embed.add_field(name="Hit Points", value=entry["hp"], inline=True)
         ancestry_embed.add_field(name="Size", value=entry["size"], inline=True)
@@ -95,19 +115,50 @@ class ScraperHelper:
         
         return ancestry_embed
      
-    async def build_class_embed(self, url: str):
+    async def build_class_embed(self, name: str):
+        entry = next((e for e in self.classes if e["name"].lower() == name.lower()), None)
         
-        html = await self.fetch_page(url)
-        soup = BeautifulSoup(html, 'html.parser')
+        if not entry:
+            raise ValueError(f"Could not find {name} in classes data.")
+
+        if "id" in entry and entry["id"] and "image_url" in entry:
+            # construct both urls directly
+            url = f"https://2e.aonprd.com/Classes.aspx?ID={entry['id']}"
+            image_url = entry["image_url"]
+        else:
+            # call the fetch_id
+            id, url, image_url = await self.fetch_id(name, "classes")
+            entry["id"] = id
+            entry["url"] = url
+            entry["image_url"] = image_url
+            with open("helpers/data/class-table.json", "w", encoding = "utf-8") as f:
+                json.dump(self.classes, f, indent=4)
         
-        #Extract data from site, organize data and assign to different values
+        className = entry["name"]
+        classDescription = entry["summary"]
         
+    
+        # builds the embed using the extracted data from the json, matching key names to key values
         class_embed = discord.Embed(
             title = className,
+            url = url,
             description = classDescription,
             color = discord.Color.red(),
         )
         
+        if image_url:
+            class_embed.set_thumbnail(url=image_url)        
+        
+        class_embed.add_field(name="Main Stat", value=entry["ability"], inline=True)
+        class_embed.add_field(name="Starting Hit Points", value=entry["hp"], inline=True)
+        class_embed.add_field(name="Spellcasting Tradition", value=entry["tradition"] or "Not Caster", inline=False)
+        class_embed.add_field(name="Attack Proficiencies", value=entry["attack_proficiency"], inline=True)
+        class_embed.add_field(name="Defense Proficiencies", value=entry["defense_proficiency"] or "None", inline=True)
+        class_embed.add_field(name="Fortitude Proficiency", value=entry["fortitude_proficiency"], inline=False)
+        class_embed.add_field(name="Reflex Proficiency", value=entry["reflex_proficiency"] , inline=False)
+        class_embed.add_field(name="Will Proficiency", value=entry["will_proficiency"], inline=False)
+        class_embed.add_field(name="Skill Proficiencies", value=entry["skill_proficiency"], inline=False)
+
         return class_embed
     
     async def build_archetype_embed(self, url: str):
