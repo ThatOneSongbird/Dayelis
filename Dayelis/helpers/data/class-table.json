@@ -135,7 +135,10 @@
         "will_proficiency": "Expert",
         "perception_proficiency": "Trained",
         "skill_proficiency": "Trained in  Religion\nTrained in a number of additional skills equal to 3 plus your Intelligence modifier",
-        "summary": "Exemplars channel a spark of divine power through sacred relics called ikons and draw power from the epithets they build for themselves."
+        "summary": "Exemplars channel a spark of divine power through sacred relics called ikons and draw power from the epithets they build for themselves.",
+        "id": "65",
+        "url": "https://2e.aonprd.com/Classes.aspx?ID=65",
+        "image_url": "https://2e.aonprd.com/Images/Classes/Iconic_Nahoa.webp"
     },
     {
         "name": "Fighter",

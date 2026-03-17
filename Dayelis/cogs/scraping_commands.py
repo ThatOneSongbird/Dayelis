@@ -41,36 +41,30 @@ class Scraping(commands.Cog):
     @commands.command()
     async def feats(self, ctx, *, feat_name: str):
         try:
-            url = self.scraper.search_pathfinder(feat_name, "Feat")
-            feat_embed = await self.scraper.build_feat_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that feat. Please check the spelling and try again.")
-            return
-
-        await ctx.send(embed=feat_embed)
+            feat_embed = await self.scraper.build_feat_embed(feat_name)
+            await ctx.send(embed=feat_embed)
+        except Exception as e:
+            print("FULL ERROR", e)
+            await ctx.send(f"Search issue: {e}")
         
     # Creature, Spell, Items 
     @commands.command()
     async def creature(self, ctx, *, creature_name: str):
         try:
-            url = self.scraper.search_pathfinder(creature_name, "Creature")
-            creature_embed = await self.scraper.build_creature_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that creature. Please check the spelling and try again.")
-            return
-
-        await ctx.send(embed=creature_embed)
+            creature_embed = await self.scraper.build_creature_embed(creature_name)
+            await ctx.send(embed=creature_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
         
     @commands.command()
     async def spell(self, ctx, *, spell_name: str):
         try:
-            url = self.scraper.search_pathfinder(spell_name, "Spell")
-            spell_embed = await self.scraper.build_spell_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that spell. Please check the spelling and try again.")
-            return
-
-        await ctx.send(embed=spell_embed)
+            spell_embed = await self.scraper.build_spell_embed(spell_name)
+            await ctx.send(embed=spell_embed)
+        except Exception as e:
+            print("FULL ERROR", e)
+            await ctx.send(f"Search issue: {e}")
     
     @commands.command()
     async def item(self, ctx, *, item_name: str):

@@ -53,7 +53,7 @@ logging.basicConfig(level=logging.DEBUG, handlers=[handler])
 bot_statuses = cycle([
     discord.Activity(type=discord.ActivityType.listening, name="the prayers of Exandria."),
     discord.Activity(type=discord.ActivityType.watching, name="the flowers of Verðandi bloom."),
-    discord.Activity(type=discord.ActivityType.playing, name="over the realm of Exandria.")
+    discord.Activity(type=discord.ActivityType.watching, name="over the realm of Exandria.")
 ])
 
 
