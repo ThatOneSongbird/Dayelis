@@ -22,5 +22,8 @@ Dayelis using the following libraries for basic functionality:
 
 !reloadcog <cog name> to reload a cog for new functionality
 
+!pf2<category> to call a category of item from the json table, matches it with the AoN link, and creates an embed from json table.
+- Categories are Ancestry, Archetype, Armor, Class, Creature, Feat, Item, Spell, Weapon
+
 ## Future Implementation
-Webscraping using beautifulsoup4 to be able to embed different aspects of Pathfinder/Starfinder, like creatures, features, spells, and items. 
+Webscraping using beautifulsoup4 to be able to embed different aspects of Pathfinder/Starfinder, like creatures, features, spells, and items. Starfinder2E needs implementation.

@@ -92,7 +92,7 @@ class General(commands.Cog):
         # Ask for title
         await ctx.send("What is the title of the announcement?")
         try:
-            msg = await self.bot.wait_for("message", timeout=60.0, check=check)
+            msg = await self.bot.wait_for("message", timeout=180.0, check=check)
             title = msg.content 
         except asyncio.TimeoutError:
             await ctx.send("I'm sorry, but you took too long. Please try again.")
@@ -101,7 +101,7 @@ class General(commands.Cog):
         # Ask for description
         await ctx.send("What is the description of the announcement?")
         try: 
-            msg = await self.bot.wait_for("message", timeout=60.0, check=check)
+            msg = await self.bot.wait_for("message", timeout=180.0, check=check)
             description = msg.content
         except asyncio.TimeoutError:
             await ctx.send("I'm sorry, but you took too long. Please try again.")
@@ -113,13 +113,26 @@ class General(commands.Cog):
             description=description,
             color=discord.Colour.dark_green()
         )
-        embed.set_thumbnail(url="https://img.goodfon.com/wallpaper/big/6/63/merlin-fate-grand-order-fate-grand-order-zettai-majuu-sensen.webp")
+        
+        # Ask for thumbnail, must be sent in the form of an image URL, otherwise set default thumbnail.
+        await ctx.send("Would you like to add a thumbnail, friend? If no, default is used. Format needs to be an image URL. (yes/no)")
+        try:
+            response = await self.bot.wait_for("message", timeout=180.0, check=check)
+            if response.content.lower() in ["yes", "y"]:
+                await ctx.send("Please provide the URL for the thumbnail:")
+                url_msg = await self.bot.wait_for("message", timeout=180.0, check=check)
+                embed.set_thumbnail(url=url_msg.content)
+            else:
+                embed.set_thumbnail(url="https://img.goodfon.com/wallpaper/big/6/63/merlin-fate-grand-order-fate-grand-order-zettai-majuu-sensen.webp")
+        except asyncio.TimeoutError:
+            await ctx.send("Timed out, using default thumbnail.")
+            embed.set_thumbnail(url="https://img.goodfon.com/wallpaper/big/6/63/merlin-fate-grand-order-fate-grand-order-zettai-majuu-sensen.webp")
         
         # Add optional fields
         while True:
             await ctx.send("Would you like to add a field? (yes/no)")
             try: 
-                response = await self.bot.wait_for("message", timeout=60.0, check=check)
+                response = await self.bot.wait_for("message", timeout=180.0, check=check)
             except asyncio.TimeoutError:
                 await ctx.send("Timed out, sorry.")
                 break  # exit loop but still send embed
@@ -129,11 +142,11 @@ class General(commands.Cog):
             
             # Ask field info
             await ctx.send("What is the field title?")
-            name_msg = await self.bot.wait_for("message", timeout=60.0, check=check)
+            name_msg = await self.bot.wait_for("message", timeout=180.0, check=check)
             await ctx.send("What is the field value?")
-            value_msg = await self.bot.wait_for("message", timeout=60.0, check=check)
+            value_msg = await self.bot.wait_for("message", timeout=180.0, check=check)
             await ctx.send("Should this be inline? (yes/no)")
-            inline_msg = await self.bot.wait_for("message", timeout=60.0, check=check)
+            inline_msg = await self.bot.wait_for("message", timeout=180.0, check=check)
             inline = inline_msg.content.lower() in ["yes", "y"]
 
             # Add field directly to embed
