@@ -86,8 +86,7 @@ class ScraperHelper:
                 return id, url, image_url
                 
         return None, None, ""
-        
-    # NOTE: FOLLOWING FUNCTIONS ARE PLACEHOLDER AND NOT FINAL. THESE ARE BASIC SHAPES AND WILL ALL BE ADJUSTED. 
+
     # Character Related ie Class, Ancestry, Feats, Archetypes        
     async def build_ancestry_embed(self, name: str):
         entry = next((e for e in self.ancestries if e["name"].lower() == name.lower()), None)
