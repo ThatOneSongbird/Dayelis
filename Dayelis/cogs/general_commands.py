@@ -37,9 +37,14 @@ class General(commands.Cog):
     async def warning(self, ctx, hours: int, minutes: int = 0):
         target_channel = self.bot.get_channel(self.bot.ANNOUNCEMENT_CHANNEL_ID)
         if target_channel:
-            await target_channel.send(
-                f"<@&{self.bot.PLAYER_ROLE_ID}> Warning: Session starts in {hours} hours and {minutes} minutes!"
-            )
+            if hours > 0 and minutes > 0:
+                await target_channel.send(
+                    f"<@&{self.bot.PLAYER_ROLE_ID}> Warning: Session starts in {hours} hours and {minutes} minutes!")
+            elif hours == 0 and minutes > 0:
+                await target_channel.send(f"<@&{self.bot.PLAYER_ROLE_ID}> Time is approaching!Session starts in {minutes} minutes!")
+            else:               
+                await target_channel.send(f"<@&{self.bot.PLAYER_ROLE_ID}> Warning: Session starts in {hours} hours!")
+                
             await ctx.send("Warning sent to the announcements channel!")
         else:
             await ctx.send("Error: Announcements channel not found.")
