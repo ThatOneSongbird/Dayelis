@@ -39,9 +39,9 @@ class ScraperHelper:
             self.creatures = json.load(f)
         with open("helpers/data/spell-table.json", encoding = "utf-8") as f:
             self.spells = json.load(f)
-        with open("helpers/data/item-table.json", encoding="utf-8") as f:
-            self.items = json.load(f)
         with open("helpers/data/weapon-table.json", encoding="utf-8") as f:
+            self.items = json.load(f)
+        with open("helpers/data/item-table.json", encoding="utf-8") as f:
             self.weapons = json.load(f)
         with open("helpers/data/armor-table.json", encoding="utf-8") as f:
             self.armors = json.load(f)
@@ -342,19 +342,17 @@ class ScraperHelper:
     async def build_item_embed(self, name: str):
         entry = next((e for e in self.items if e["name"].lower() == name.lower()), None)
 
-        if entry and entry.get("id"):
-            url = f"https://2e.aonprd.com/Equipment.aspx?ID={entry['id']}"
+        if not entry:
+            raise ValueError(f"Could not find {name} in item data.")
+
+        if entry["url"]:
+            url = urljoin("https://2e.aonprd.com/", entry["url"])
         else:
-            id, url, _ = await self.fetch_id(name, "equipment")
-            if not id:
+            _, url, _ = await self.fetch_id(name, "equipment")
+            if not url:
                 raise ValueError(f"Could not find {name} in equipment data.")
-            if not entry:
-                entry = {"name": name, "id": id, "url": url, "rarity": "", "trait": "", "item_category": "", "item_subcategory": "", "level": "", "price": "", "bulk": "", "usage": "", "summary": ""}
-                self.items.append(entry)
-            else:
-                entry["id"] = id
-                entry["url"] = url
-            with open("helpers/data/item-table.json", "w", encoding="utf-8") as f:
+            entry["url"] = url
+            with open("helpers/data/weapon-table.json", "w", encoding="utf-8") as f:
                 json.dump(self.items, f, indent=4)
 
         item_embed = discord.Embed(
@@ -364,17 +362,17 @@ class ScraperHelper:
             color=discord.Color.red(),
         )
 
-        item_embed.add_field(name="Rarity", value=entry["rarity"] or "Common", inline=True)
+        item_embed.add_field(name="Level", value=entry["level"] or "0", inline=False)        
+        item_embed.add_field(name="Rarity", value=entry["rarity"] or "Common", inline=False)
         if entry["trait"]:
             item_embed.add_field(name="Trait(s)", value=entry["trait"], inline=False)
         item_embed.add_field(name="Item Category", value=entry["item_category"] or "Unknown", inline=True)
         if entry["item_subcategory"]:
             item_embed.add_field(name="Item Subcategory", value=entry["item_subcategory"], inline=True)
-        item_embed.add_field(name="Level", value=entry["level"] or "0", inline=True)
         if entry["price"]:
-            item_embed.add_field(name="Price", value=entry["price"], inline=True)
+            item_embed.add_field(name="Price", value=entry["price"], inline=False)
         if entry["usage"]:
-            item_embed.add_field(name="Usage", value=entry["usage"], inline=True)
+            item_embed.add_field(name="Usage", value=entry["usage"], inline=False)
 
         return item_embed
 
@@ -384,41 +382,41 @@ class ScraperHelper:
         if not entry:
             raise ValueError(f"Could not find {name} in weapons data.")
 
-        if entry.get("id"):
-            url = f"https://2e.aonprd.com/Weapons.aspx?ID={entry['id']}"
+        if entry["url"]:
+            url = urljoin("https://2e.aonprd.com/", entry["url"])
         else:
-            id, url, _ = await self.fetch_id(name, "weapons")
-            if not id:
+            _, url, _ = await self.fetch_id(name, "weapons")
+            if not url:
                 raise ValueError(f"Could not find {name} on Archives of Nethys.")
-            entry["id"] = id
             entry["url"] = url
-            with open("helpers/data/weapon-table.json", "w", encoding="utf-8") as f:
+            with open("helpers/data/item-table.json", "w", encoding="utf-8") as f:
                 json.dump(self.weapons, f, indent=4)
 
         weapon_embed = discord.Embed(
             title=entry["name"],
             url=url,
+            description=entry["summary"],
             color=discord.Color.red(),
         )
 
-        weapon_embed.add_field(name="Type", value=entry["weapon_type"], inline=True)
-        weapon_embed.add_field(name="Category", value=entry["weapon_category"], inline=True)
-        weapon_embed.add_field(name="Group", value=entry["weapon_group"], inline=True)
+        weapon_embed.add_field(name="Level", value=entry["level"], inline=False)
+        weapon_embed.add_field(name="Type", value=entry["weapon_type"], inline=False)
+        weapon_embed.add_field(name="Category", value=entry["weapon_category"], inline=False)
+        weapon_embed.add_field(name="Group", value=entry["weapon_group"], inline=False)
         if entry["trait"]:
             weapon_embed.add_field(name="Traits", value=entry["trait"], inline=False)
         if entry["damage"]:
-            weapon_embed.add_field(name="Damage", value=entry["damage"], inline=True)
+            weapon_embed.add_field(name="Damage", value=entry["damage"], inline=False)
         if entry["hands"]:
-            weapon_embed.add_field(name="Hands", value=entry["hands"], inline=True)
+            weapon_embed.add_field(name="Hands", value=entry["hands"], inline=False)
         if entry["range"]:
             weapon_embed.add_field(name="Range", value=entry["range"], inline=True)
         if entry["reload"]:
             weapon_embed.add_field(name="Reload", value=entry["reload"], inline=True)
         if entry["bulk"]:
-            weapon_embed.add_field(name="Bulk", value=entry["bulk"], inline=True)
+            weapon_embed.add_field(name="Bulk", value=entry["bulk"], inline=False)
         if entry["price"]:
-            weapon_embed.add_field(name="Price", value=entry["price"], inline=True)
-        weapon_embed.add_field(name="Level", value=entry["level"], inline=True)
+            weapon_embed.add_field(name="Price", value=entry["price"], inline=False)
 
         return weapon_embed
 
@@ -428,13 +426,12 @@ class ScraperHelper:
         if not entry:
             raise ValueError(f"Could not find {name} in armors data.")
 
-        if entry.get("id"):
-            url = f"https://2e.aonprd.com/Armor.aspx?ID={entry['id']}"
+        if entry["url"]:
+            url = urljoin("https://2e.aonprd.com/", entry["url"])
         else:
-            id, url, _ = await self.fetch_id(name, "armors")
-            if not id:
+            _, url, _ = await self.fetch_id(name, "armors")
+            if not url:
                 raise ValueError(f"Could not find {name} on Archives of Nethys.")
-            entry["id"] = id
             entry["url"] = url
             with open("helpers/data/armor-table.json", "w", encoding="utf-8") as f:
                 json.dump(self.armors, f, indent=4)
@@ -442,28 +439,29 @@ class ScraperHelper:
         armor_embed = discord.Embed(
             title=entry["name"],
             url=url,
+            description=entry["summary"],
             color=discord.Color.red(),
         )
 
-        armor_embed.add_field(name="Rarity", value=entry["rarity"], inline=True)
-        armor_embed.add_field(name="Category", value=entry["armor_category"], inline=True)
+        armor_embed.add_field(name="Level", value=entry["level"], inline=False)
+        armor_embed.add_field(name="Rarity", value=entry["rarity"], inline=False)
+        armor_embed.add_field(name="Category", value=entry["armor_category"], inline=False)
         if entry["armor_group"]:
-            armor_embed.add_field(name="Group", value=entry["armor_group"], inline=True)
+            armor_embed.add_field(name="Group", value=entry["armor_group"], inline=False)
         if entry["trait"]:
             armor_embed.add_field(name="Traits", value=entry["trait"], inline=False)
         armor_embed.add_field(name="AC Bonus", value=entry["ac"], inline=True)
         if entry["dex_cap"]:
             armor_embed.add_field(name="Dex Cap", value=entry["dex_cap"], inline=True)
         if entry["check_penalty"]:
-            armor_embed.add_field(name="Check Penalty", value=entry["check_penalty"], inline=True)
+            armor_embed.add_field(name="Check Penalty", value=entry["check_penalty"], inline=False)
         if entry["speed_penalty"]:
-            armor_embed.add_field(name="Speed Penalty", value=entry["speed_penalty"], inline=True)
+            armor_embed.add_field(name="Speed Penalty", value=entry["speed_penalty"], inline=False)
         if entry["strength_req"]:
-            armor_embed.add_field(name="Strength", value=entry["strength_req"], inline=True)
+            armor_embed.add_field(name="Strength", value=entry["strength_req"], inline=False)
         if entry["bulk"]:
-            armor_embed.add_field(name="Bulk", value=entry["bulk"], inline=True)
+            armor_embed.add_field(name="Bulk", value=entry["bulk"], inline=False)
         if entry["price"]:
-            armor_embed.add_field(name="Price", value=entry["price"], inline=True)
-        armor_embed.add_field(name="Level", value=entry["level"], inline=True)
+            armor_embed.add_field(name="Price", value=entry["price"], inline=False)
 
         return armor_embed
