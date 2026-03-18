@@ -1,0 +1,4 @@
+1. Implement Starfinder 2E equivalent ideas.
+2. Implement future link for blogging website
+3. Maybe use connect to X/Twitter API to make announcement posts for Paizo when they post ?
+4. Visually update Dayelis and overall revamp of bot visually and aesthetically
