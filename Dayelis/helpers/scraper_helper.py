@@ -27,8 +27,6 @@ class ScraperHelper:
             self.ancestries = json.loads(content)
         with open("helpers/data/archetype-table.json", encoding = "utf-8") as f:
             self.archetypes = json.load(f)
-        with open("helpers/data/background-table.json", encoding = "utf-8") as f:
-            self.backgrounds = json.load(f)
         with open("helpers/data/class-table.json", encoding = "utf-8") as f:
             self.classes = json.load(f)
         with open("helpers/data/feat-table.json", encoding="utf-8") as f:
@@ -39,12 +37,24 @@ class ScraperHelper:
             self.creatures = json.load(f)
         with open("helpers/data/spell-table.json", encoding = "utf-8") as f:
             self.spells = json.load(f)
-        with open("helpers/data/weapon-table.json", encoding="utf-8") as f:
-            self.items = json.load(f)
         with open("helpers/data/item-table.json", encoding="utf-8") as f:
-            self.weapons = json.load(f)
+            content = f.read()
+            content = content.replace("\\u2026", "...")
+            content = content.replace("\\u2019", "'")
+            content = content.replace("\\u2018", "'")
+            content = content.replace("\\u00a0", " ")
+            self.items = json.loads(content)
+        with open("helpers/data/weapon-table.json", encoding="utf-8") as f:
+            content = f.read()
+            content = content.replace("\\u2026", "...")
+            content = content.replace("\\u2019", "'")
+            content = content.replace("\\u2013", "-")
+            content = content.replace("\\u2011", "-")
+            self.weapons = json.loads(content)
         with open("helpers/data/armor-table.json", encoding="utf-8") as f:
-            self.armors = json.load(f)
+            content = f.read()
+            content = content.replace("\\u2026", "...")
+            self.armors = json.loads(content)
         
     async def fetch_page(self, url: str) -> str:
         #fetch html content of a url asynchronously
@@ -351,7 +361,7 @@ class ScraperHelper:
             if not url:
                 raise ValueError(f"Could not find {name} in equipment data.")
             entry["url"] = url
-            with open("helpers/data/weapon-table.json", "w", encoding="utf-8") as f:
+            with open("helpers/data/item-table.json", "w", encoding="utf-8") as f:
                 json.dump(self.items, f, indent=4)
 
         item_embed = discord.Embed(
@@ -388,7 +398,7 @@ class ScraperHelper:
             if not url:
                 raise ValueError(f"Could not find {name} on Archives of Nethys.")
             entry["url"] = url
-            with open("helpers/data/item-table.json", "w", encoding="utf-8") as f:
+            with open("helpers/data/weapon-table.json", "w", encoding="utf-8") as f:
                 json.dump(self.weapons, f, indent=4)
 
         weapon_embed = discord.Embed(
