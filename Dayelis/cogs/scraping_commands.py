@@ -10,8 +10,8 @@ class Scraping(commands.Cog):
         self.scraper = ScraperHelper()
 
     # Character Related ie Class, Ancestry, Feats, Archetypes
-    @commands.command()
-    async def ancestry(self, ctx, *, ancestry_name: str):
+    @commands.command(name="pf2ancestry")
+    async def pf2ancestry(self, ctx, *, ancestry_name: str):
         try:
             ancestry_embed = await self.scraper.build_ancestry_embed(ancestry_name)
             await ctx.send(embed=ancestry_embed)
@@ -20,8 +20,8 @@ class Scraping(commands.Cog):
             await ctx.send(f"Search issue: {e}")
         
         
-    @commands.command()
-    async def cclass(self, ctx, *, class_name: str): # needed to be cclass becuase class is a reserved word in python lol
+    @commands.command(name="pf2class")
+    async def pf2class(self, ctx, *, class_name: str):
         try:
             class_embed = await self.scraper.build_class_embed(class_name)
             await ctx.send(embed=class_embed)
@@ -29,8 +29,8 @@ class Scraping(commands.Cog):
             print("FULL ERROR:", e)
             await ctx.send(f"Search issue: {e}")
 
-    @commands.command()
-    async def archetype(self, ctx, *, archetype_name: str):
+    @commands.command(name="pf2archetype")
+    async def pf2archetype(self, ctx, *, archetype_name: str):
         try:
             archetype_embed = await self.scraper.build_archetype_embed(archetype_name)
             await ctx.send(embed=archetype_embed)
@@ -38,8 +38,8 @@ class Scraping(commands.Cog):
             print("FULL ERROR:", e)
             await ctx.send(f"Search issue: {e}")
 
-    @commands.command()
-    async def feats(self, ctx, *, feat_name: str):
+    @commands.command(name="pf2feats")
+    async def pf2feats(self, ctx, *, feat_name: str):
         try:
             feat_embed = await self.scraper.build_feat_embed(feat_name)
             await ctx.send(embed=feat_embed)
@@ -48,8 +48,8 @@ class Scraping(commands.Cog):
             await ctx.send(f"Search issue: {e}")
         
     # Creature, Spell, Items 
-    @commands.command()
-    async def creature(self, ctx, *, creature_name: str):
+    @commands.command(name="pf2creature")
+    async def pf2creature(self, ctx, *, creature_name: str):
         try:
             creature_embed = await self.scraper.build_creature_embed(creature_name)
             await ctx.send(embed=creature_embed)
@@ -57,8 +57,8 @@ class Scraping(commands.Cog):
             print("FULL ERROR:", e)
             await ctx.send(f"Search issue: {e}")
         
-    @commands.command()
-    async def spell(self, ctx, *, spell_name: str):
+    @commands.command(name="pf2spell")
+    async def pf2spell(self, ctx, *, spell_name: str):
         try:
             spell_embed = await self.scraper.build_spell_embed(spell_name)
             await ctx.send(embed=spell_embed)
@@ -66,16 +66,32 @@ class Scraping(commands.Cog):
             print("FULL ERROR", e)
             await ctx.send(f"Search issue: {e}")
     
-    @commands.command()
-    async def item(self, ctx, *, item_name: str):
+    @commands.command(name="pf2item")
+    async def pf2item(self, ctx, *, item_name: str):
         try:
-            url = self.scraper.search_pathfinder(item_name, "Item")
-            item_embed = await self.scraper.build_item_embed(url)
-        except Exception:
-            await ctx.send("I couldn't find that item. Please check the spelling and try again.")
-            return
+            item_embed = await self.scraper.build_item_embed(item_name)
+            await ctx.send(embed=item_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
 
-        await ctx.send(embed=item_embed)
+    @commands.command(name="pf2weapon")
+    async def pf2weapon(self, ctx, *, weapon_name: str):
+        try:
+            weapon_embed = await self.scraper.build_weapon_embed(weapon_name)
+            await ctx.send(embed=weapon_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
+
+    @commands.command(name="pf2armor")
+    async def pf2armor(self, ctx, *, armor_name: str):
+        try:
+            armor_embed = await self.scraper.build_armor_embed(armor_name)
+            await ctx.send(embed=armor_embed)
+        except Exception as e:
+            print("FULL ERROR:", e)
+            await ctx.send(f"Search issue: {e}")
         
 # Adds cog to bot
 async def setup(bot):

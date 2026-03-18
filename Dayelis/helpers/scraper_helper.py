@@ -15,7 +15,9 @@ class ScraperHelper:
         "equipment": "https://2e.aonprd.com/Equipment.aspx",
         "creatures": "https://2e.aonprd.com/Creatures.aspx",
         "feats": "https://2e.aonprd.com/Feats.aspx",
-        "spells": "https://2e.aonprd.com/Spells.aspx"
+        "spells": "https://2e.aonprd.com/Spells.aspx",
+        "weapons": "https://2e.aonprd.com/Weapons.aspx",
+        "armors": "https://2e.aonprd.com/Armor.aspx"
         }
         
         #functions to load jsons on initalization
@@ -37,6 +39,12 @@ class ScraperHelper:
             self.creatures = json.load(f)
         with open("helpers/data/spell-table.json", encoding = "utf-8") as f:
             self.spells = json.load(f)
+        with open("helpers/data/item-table.json", encoding="utf-8") as f:
+            self.items = json.load(f)
+        with open("helpers/data/weapon-table.json", encoding="utf-8") as f:
+            self.weapons = json.load(f)
+        with open("helpers/data/armor-table.json", encoding="utf-8") as f:
+            self.armors = json.load(f)
         
     async def fetch_page(self, url: str) -> str:
         #fetch html content of a url asynchronously
@@ -331,17 +339,131 @@ class ScraperHelper:
 
         return spell_embed
     
-    async def build_item_embed(self, url: str):
-        
-        html = await self.fetch_page(url)
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        #Extract data from site, organize data and assign to different values
-        
+    async def build_item_embed(self, name: str):
+        entry = next((e for e in self.items if e["name"].lower() == name.lower()), None)
+
+        if entry and entry.get("id"):
+            url = f"https://2e.aonprd.com/Equipment.aspx?ID={entry['id']}"
+        else:
+            id, url, _ = await self.fetch_id(name, "equipment")
+            if not id:
+                raise ValueError(f"Could not find {name} in equipment data.")
+            if not entry:
+                entry = {"name": name, "id": id, "url": url, "rarity": "", "trait": "", "item_category": "", "item_subcategory": "", "level": "", "price": "", "bulk": "", "usage": "", "summary": ""}
+                self.items.append(entry)
+            else:
+                entry["id"] = id
+                entry["url"] = url
+            with open("helpers/data/item-table.json", "w", encoding="utf-8") as f:
+                json.dump(self.items, f, indent=4)
+
         item_embed = discord.Embed(
-            title = itemName,
-            description = itemDescription,
-            color = discord.Color.Red(),
+            title=entry["name"],
+            url=url,
+            description=entry["summary"],
+            color=discord.Color.red(),
         )
-        
+
+        item_embed.add_field(name="Rarity", value=entry["rarity"] or "Common", inline=True)
+        if entry["trait"]:
+            item_embed.add_field(name="Trait(s)", value=entry["trait"], inline=False)
+        item_embed.add_field(name="Item Category", value=entry["item_category"] or "Unknown", inline=True)
+        if entry["item_subcategory"]:
+            item_embed.add_field(name="Item Subcategory", value=entry["item_subcategory"], inline=True)
+        item_embed.add_field(name="Level", value=entry["level"] or "0", inline=True)
+        if entry["price"]:
+            item_embed.add_field(name="Price", value=entry["price"], inline=True)
+        if entry["usage"]:
+            item_embed.add_field(name="Usage", value=entry["usage"], inline=True)
+
         return item_embed
+
+    async def build_weapon_embed(self, name: str):
+        entry = next((e for e in self.weapons if e["name"].lower() == name.lower()), None)
+
+        if not entry:
+            raise ValueError(f"Could not find {name} in weapons data.")
+
+        if entry.get("id"):
+            url = f"https://2e.aonprd.com/Weapons.aspx?ID={entry['id']}"
+        else:
+            id, url, _ = await self.fetch_id(name, "weapons")
+            if not id:
+                raise ValueError(f"Could not find {name} on Archives of Nethys.")
+            entry["id"] = id
+            entry["url"] = url
+            with open("helpers/data/weapon-table.json", "w", encoding="utf-8") as f:
+                json.dump(self.weapons, f, indent=4)
+
+        weapon_embed = discord.Embed(
+            title=entry["name"],
+            url=url,
+            color=discord.Color.red(),
+        )
+
+        weapon_embed.add_field(name="Type", value=entry["weapon_type"], inline=True)
+        weapon_embed.add_field(name="Category", value=entry["weapon_category"], inline=True)
+        weapon_embed.add_field(name="Group", value=entry["weapon_group"], inline=True)
+        if entry["trait"]:
+            weapon_embed.add_field(name="Traits", value=entry["trait"], inline=False)
+        if entry["damage"]:
+            weapon_embed.add_field(name="Damage", value=entry["damage"], inline=True)
+        if entry["hands"]:
+            weapon_embed.add_field(name="Hands", value=entry["hands"], inline=True)
+        if entry["range"]:
+            weapon_embed.add_field(name="Range", value=entry["range"], inline=True)
+        if entry["reload"]:
+            weapon_embed.add_field(name="Reload", value=entry["reload"], inline=True)
+        if entry["bulk"]:
+            weapon_embed.add_field(name="Bulk", value=entry["bulk"], inline=True)
+        if entry["price"]:
+            weapon_embed.add_field(name="Price", value=entry["price"], inline=True)
+        weapon_embed.add_field(name="Level", value=entry["level"], inline=True)
+
+        return weapon_embed
+
+    async def build_armor_embed(self, name: str):
+        entry = next((e for e in self.armors if e["name"].lower() == name.lower()), None)
+
+        if not entry:
+            raise ValueError(f"Could not find {name} in armors data.")
+
+        if entry.get("id"):
+            url = f"https://2e.aonprd.com/Armor.aspx?ID={entry['id']}"
+        else:
+            id, url, _ = await self.fetch_id(name, "armors")
+            if not id:
+                raise ValueError(f"Could not find {name} on Archives of Nethys.")
+            entry["id"] = id
+            entry["url"] = url
+            with open("helpers/data/armor-table.json", "w", encoding="utf-8") as f:
+                json.dump(self.armors, f, indent=4)
+
+        armor_embed = discord.Embed(
+            title=entry["name"],
+            url=url,
+            color=discord.Color.red(),
+        )
+
+        armor_embed.add_field(name="Rarity", value=entry["rarity"], inline=True)
+        armor_embed.add_field(name="Category", value=entry["armor_category"], inline=True)
+        if entry["armor_group"]:
+            armor_embed.add_field(name="Group", value=entry["armor_group"], inline=True)
+        if entry["trait"]:
+            armor_embed.add_field(name="Traits", value=entry["trait"], inline=False)
+        armor_embed.add_field(name="AC Bonus", value=entry["ac"], inline=True)
+        if entry["dex_cap"]:
+            armor_embed.add_field(name="Dex Cap", value=entry["dex_cap"], inline=True)
+        if entry["check_penalty"]:
+            armor_embed.add_field(name="Check Penalty", value=entry["check_penalty"], inline=True)
+        if entry["speed_penalty"]:
+            armor_embed.add_field(name="Speed Penalty", value=entry["speed_penalty"], inline=True)
+        if entry["strength_req"]:
+            armor_embed.add_field(name="Strength", value=entry["strength_req"], inline=True)
+        if entry["bulk"]:
+            armor_embed.add_field(name="Bulk", value=entry["bulk"], inline=True)
+        if entry["price"]:
+            armor_embed.add_field(name="Price", value=entry["price"], inline=True)
+        armor_embed.add_field(name="Level", value=entry["level"], inline=True)
+
+        return armor_embed
