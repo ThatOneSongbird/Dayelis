@@ -17,7 +17,11 @@ Dayelis using the following libraries for basic functionality:
 !foundry to pull up a Foundry link, set by environment variable
  
 !hello to get a random greeting
- 
+
+!warning <hours> <minutes> to send a warning, and prints a message based on the hours and minutes, while tagging the player role.
+
+!schedule to send a message to the schedule channel, tagging players and reacting with a thumbs up or thumbs down for yes/no
+
 !announcement to send an embedded announcement. Dayelis will prompt the user for the information, and reiterate a loop for every new field (up to 25)
 
 !reloadcog <cog name> to reload a cog for new functionality
