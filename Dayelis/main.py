@@ -74,16 +74,17 @@ async def today_is_the_day():
         
 @tasks.loop(time=time(hour = 12, minute = 0, tzinfo = CT))
 async def schedule(self, ctx):
-    target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
-    if target_channel:
-        message = await target_channel.send(
-            f"<@&{self.bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n👍 Yes\n or \n👎 No"
-        )
-        await message.add_reaction("👍")
-        await message.add_reaction("👎")
-        await ctx.send("Poll created in the schedule channel!")
-    else:
-        await ctx.send("Error: Schedule channel not found.")
+    if datetime.now(CT).weekday() == 0:  # 0 = Monday
+        target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
+        if target_channel:
+            message = await target_channel.send(
+                f"<@&{self.bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n👍 Yes\n or \n👎 No"
+            )
+            await message.add_reaction("👍")
+            await message.add_reaction("👎")
+            await ctx.send("Poll created in the schedule channel!")
+        else:
+            await ctx.send("Error: Schedule channel not found.")
 
 #BOT ON_READY SECTION
 @bot.event
