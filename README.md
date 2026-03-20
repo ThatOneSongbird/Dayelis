@@ -8,6 +8,7 @@ Dayelis using the following libraries for basic functionality:
 - **python-dotenv** for loading environment variables from a .env file
 - **asyncio** for asynchronous operations, which is what the commands are built off of
 - **beautifulsoup4** for web scraping, specifically getting information from Archives of Nethys and creating it into an embeded image
+- **pytz** for timezone setting.
 
 ## Current Functions:  
 !pf2e to pull up Archives of Nethys link for Pathfinder 2E  
@@ -19,8 +20,6 @@ Dayelis using the following libraries for basic functionality:
 !hello to get a random greeting
 
 !warning <hours> <minutes> to send a warning, and prints a message based on the hours and minutes, while tagging the player role.
-
-!schedule to send a message to the schedule channel, tagging players and reacting with a thumbs up or thumbs down for yes/no
 
 !announcement to send an embedded announcement. Dayelis will prompt the user for the information, and reiterate a loop for every new field (up to 25)
 
