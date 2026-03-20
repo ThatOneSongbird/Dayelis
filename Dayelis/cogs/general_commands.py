@@ -49,7 +49,8 @@ class General(commands.Cog):
         else:
             await ctx.send("Error: Announcements channel not found.")
 
-    @commands.command()
+    # Old Schedule command, may use in future but currently not in use.
+    """@commands.command()
     @commands.has_permissions(administrator=True)
     async def schedule(self, ctx):
         target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
@@ -61,7 +62,7 @@ class General(commands.Cog):
             await message.add_reaction("👎")
             await ctx.send("Poll created in the schedule channel!")
         else:
-            await ctx.send("Error: Schedule channel not found.")
+            await ctx.send("Error: Schedule channel not found.")"""
 
     @commands.command()
     @commands.has_permissions(administrator=True)

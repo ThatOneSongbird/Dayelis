@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands, tasks
 import logging 
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 from itertools import cycle
 from discord.ext.commands import MissingPermissions
 from dotenv import load_dotenv
@@ -10,6 +10,7 @@ import random
 import asyncio
 import os
 import sys
+import pytz
 
 load_dotenv()  # Load environment variables from .env file
 
@@ -57,16 +58,40 @@ bot_statuses = cycle([
 ])
 
 
-
+# Task loop set to change the bot's status every minute
 @tasks.loop(minutes=1)
 async def change_bot_status():
     await bot.change_presence(activity=next(bot_statuses))
+
+# Task to send a gif every Saturday, and a poll every Monday to check player availability for the next session. Both are set to Central Time (CT).
+CT = pytz.timezone("America/Chicago")
+    
+@tasks.loop(time=time(hour = 10, minute = 0, tzinfo = CT))
+async def today_is_the_day():
+    if datetime.now(CT).weekday() == 5:  # 5 = Saturday
+        channel = bot.get_channel(bot.ANNOUNCEMENT_CHANNEL_ID)
+        await channel.send("https://tenor.com/view/today-yay-gif-25615367")
+        
+@tasks.loop(time=time(hour = 12, minute = 0, tzinfo = CT))
+async def schedule(self, ctx):
+    target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
+    if target_channel:
+        message = await target_channel.send(
+            f"<@&{self.bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n👍 Yes\n or \n👎 No"
+        )
+        await message.add_reaction("👍")
+        await message.add_reaction("👎")
+        await ctx.send("Poll created in the schedule channel!")
+    else:
+        await ctx.send("Error: Schedule channel not found.")
 
 #BOT ON_READY SECTION
 @bot.event
 async def on_ready():
     print(f'We have logged in as {bot.user}')
     change_bot_status.start()
+    today_is_the_day.start()
+    schedule.start()
     
 @bot.event
 async def on_command_error(ctx, error):
