@@ -78,7 +78,7 @@ async def schedule():
         target_channel = bot.get_channel(bot.SCHEDULE_CHANNEL_ID)
         if target_channel:
             message = await target_channel.send(
-                f"<@&{bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n\n👍 Yes\n👎 No\n❓ Maybe""
+                f"<@&{bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n\n👍 Yes\n👎 No\n❓ Maybe"
             )
             await message.add_reaction("👍")
             await message.add_reaction("👎")
