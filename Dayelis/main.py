@@ -13,6 +13,7 @@ import sys
 import pytz
 
 load_dotenv()  # Load environment variables from .env file
+bot_start_time = None
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -83,7 +84,25 @@ async def schedule():
             await message.add_reaction("👍")
             await message.add_reaction("👎")
             await message.add_reaction("❓")
-            
+
+@tasks.loop(time=time(hour = 10, minute = 0, tzinfo = CT))
+async def time_since_reset():
+    target_channel = bot.get_channel(bot.DAYS_SINCE_RESET_CHANNEL_ID)
+    days_alive = datetime.now(CT) - bot_start_time
+    if target_channel:
+        if days_alive == 1:
+            message = await target_channel.send(
+                f"I have arisen."
+            )
+        if days_alive % 7 == 0:
+            message = await target_channel.send(
+                f"What a week..."
+            )
+        else:
+            message = await target_channel.send(
+                f"I've been alive for {days_alive} days!"
+            )
+
 @today_is_the_day.before_loop
 async def before_today():
     await bot.wait_until_ready()
@@ -95,10 +114,13 @@ async def before_schedule():
 #BOT ON_READY SECTION
 @bot.event
 async def on_ready():
+    global bot_start_time 
+    bot_start_time = datetime.now(CT)
     print(f'We have logged in as {bot.user}')
     change_bot_status.start()
     today_is_the_day.start()
     schedule.start()
+    days_since_reset.start()
     
 @bot.event
 async def on_command_error(ctx, error):
