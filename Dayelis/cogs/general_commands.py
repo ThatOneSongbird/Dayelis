@@ -63,7 +63,7 @@ class General(commands.Cog):
                 message = await target_channel.send(
                     f"I have arisen."
                 )
-            elif days_alive % 7 == 0:
+            elif days_alive % 7 == 0 and days_alive != 0:
                 message = await target_channel.send(
                     f"What a week..."
                 )
