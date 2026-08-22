@@ -72,6 +72,18 @@ class General(commands.Cog):
                     f"I've been alive for {days_alive} days!"
                 )
 
+    @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def schedule():
+        target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
+        if target_channel:
+            message = await target_channel.send(
+                f"<@&{self.bot.PLAYER_ROLE_ID}> Are you guys available for the next session?\n\n👍 Yes\n👎 No\n❓ Maybe"
+            )
+            await message.add_reaction("👍")
+            await message.add_reaction("👎")
+            await message.add_reaction("❓")
+
     # Old Schedule command, may use in future but currently not in use.
     """@commands.command()
     @commands.has_permissions(administrator=True)
