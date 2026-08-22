@@ -1,7 +1,9 @@
 import discord
 import random
 from discord.ext import commands
+from datetime import datetime, timedelta, time
 import asyncio
+import pytz
 
 class General(commands.Cog):
     def __init__(self, bot):
@@ -53,8 +55,8 @@ class General(commands.Cog):
     @commands.has_permissions(administrator=True)
     # Test command for days_since task
     async def time_since_reset(self, ctx):
-        target_channel = self.bot.get_channel(bot.DAYS_ALIVE_CHANNEL_ID)
-        days_alive = (datetime.now(CT) - bot_start_time).days
+        target_channel = self.bot.get_channel(self.bot.DAYS_ALIVE_CHANNEL_ID)
+        days_alive = (datetime.now(CT) - self.bot.bot_start_time).days
         if target_channel:
             if days_alive == 1:
                 message = await target_channel.send(
