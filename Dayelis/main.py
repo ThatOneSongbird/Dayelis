@@ -105,6 +105,8 @@ async def time_since_reset():
                 f"I've been alive for {days_alive} days!"
             )
 
+
+
 @today_is_the_day.before_loop
 async def before_today():
     await bot.wait_until_ready()

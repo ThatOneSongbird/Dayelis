@@ -49,6 +49,26 @@ class General(commands.Cog):
         else:
             await ctx.send("Error: Announcements channel not found.")
 
+    @commands.command()
+    @commands.has_permissions(administrator=True)
+    # Test command for days_since task
+    async def time_since_reset(self, ctx):
+        target_channel = self.bot.get_channel(bot.DAYS_ALIVE_CHANNEL_ID)
+        days_alive = (datetime.now(CT) - bot_start_time).days
+        if target_channel:
+            if days_alive == 1:
+                message = await target_channel.send(
+                    f"I have arisen."
+                )
+            elif days_alive % 7 == 0:
+                message = await target_channel.send(
+                    f"What a week..."
+                )
+            else:
+                message = await target_channel.send(
+                    f"I've been alive for {days_alive} days!"
+                )
+
     # Old Schedule command, may use in future but currently not in use.
     """@commands.command()
     @commands.has_permissions(administrator=True)
