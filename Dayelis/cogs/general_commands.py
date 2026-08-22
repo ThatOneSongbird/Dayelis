@@ -74,7 +74,7 @@ class General(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(administrator=True)
-    async def schedule():
+    async def schedule(self, ctx):
         target_channel = self.bot.get_channel(self.bot.SCHEDULE_CHANNEL_ID)
         if target_channel:
             message = await target_channel.send(
