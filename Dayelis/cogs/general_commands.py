@@ -5,11 +5,12 @@ from datetime import datetime, timedelta, time
 import asyncio
 import pytz
 
+CT = pytz.timezone("America/Chicago")
+
 class General(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-            
     @commands.command()
     @commands.is_owner()  # Only the bot owner can run this
     async def reloadcog(self, ctx, cog_name: str):

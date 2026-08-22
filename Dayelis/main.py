@@ -124,6 +124,7 @@ async def before_time():
 async def on_ready():
     global bot_start_time 
     bot_start_time = datetime.now(CT)
+    bot.bot_start_time = datetime.now(CT)
     print(f'We have logged in as {bot.user}')
     change_bot_status.start()
     today_is_the_day.start()
