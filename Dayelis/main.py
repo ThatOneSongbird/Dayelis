@@ -29,6 +29,7 @@ bot.FOUNDRY_LINK = os.getenv("FOUNDRY_URL")
 bot.ANNOUNCEMENT_CHANNEL_ID = int(os.getenv("ANNOUNCEMENT_CHANNEL_ID"))
 bot.SCHEDULE_CHANNEL_ID = int(os.getenv("SCHEDULE_CHANNEL_ID"))
 bot.PLAYER_ROLE_ID = int(os.getenv("PLAYER_ROLE_ID"))
+bot.DAYS_ALIVE_CHANNEL_ID = int(os.getenv("DAYS_ALIVE_CHANNEL_ID"))
 
 # LOGGING FOR MISSING ENVIRONMENT VARIABLES
 required_env = [
@@ -36,7 +37,8 @@ required_env = [
     "FOUNDRY_URL",
     "ANNOUNCEMENT_CHANNEL_ID",
     "SCHEDULE_CHANNEL_ID",
-    "PLAYER_ROLE_ID"
+    "PLAYER_ROLE_ID",
+    "DAYS_ALIVE_CHANNEL_ID"
 ]
 
 # Loops through required_env, checks if any are missing/empty, and prints an error message if so. If all are present, it prints a success message.
@@ -87,14 +89,14 @@ async def schedule():
 
 @tasks.loop(time=time(hour = 10, minute = 0, tzinfo = CT))
 async def time_since_reset():
-    target_channel = bot.get_channel(bot.DAYS_SINCE_RESET_CHANNEL_ID)
-    days_alive = datetime.now(CT) - bot_start_time
+    target_channel = bot.get_channel(bot.DAYS_ALIVE_CHANNEL_ID)
+    days_alive = (datetime.now(CT) - bot_start_time).days
     if target_channel:
         if days_alive == 1:
             message = await target_channel.send(
                 f"I have arisen."
             )
-        if days_alive % 7 == 0:
+        elif days_alive % 7 == 0:
             message = await target_channel.send(
                 f"What a week..."
             )
@@ -111,6 +113,10 @@ async def before_today():
 async def before_schedule():
     await bot.wait_until_ready()
 
+@time_since_reset.before_loop
+async def before_time():
+    await bot.wait_until_ready()
+
 #BOT ON_READY SECTION
 @bot.event
 async def on_ready():
@@ -120,7 +126,7 @@ async def on_ready():
     change_bot_status.start()
     today_is_the_day.start()
     schedule.start()
-    days_since_reset.start()
+    time_since_reset.start()
     
 @bot.event
 async def on_command_error(ctx, error):
